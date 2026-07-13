@@ -1,0 +1,63 @@
+# Site settings
+title: "Eslam Abdelbasset - Senior Backend Developer | Full Stack Developer | Enterprise Solutions"
+description: "Senior Backend Developer specializing in Laravel, Multi-Tenant SaaS Architecture, and ERP Systems. Building scalable enterprise solutions."
+baseurl: ""
+url: "https://eslamabdelbasset.com"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+# Blog settings
+paginate: 5
+paginate_path: "/blog/page/:num/"
+
+# SEO settings
+author: Eslam Abdelbasset
+og_title: "Eslam Abdelbasset — Senior Backend Developer"
+og_description: "Senior Backend Developer specializing in Laravel, Multi-Tenant SaaS Architecture, and ERP Systems."
+twitter:
+  username: eslamabdelbasset1
+  card: summary_large_image
+
+social:
+  name: Eslam Abdelbasset
+  links:
+    - https://www.linkedin.com/in/eslamabdelbasset/
+    - https://github.com/eslamabdelbasset1
+    - https://eslamabdelbasset.com/
+
+# Jekyll settings
+permalink: /blog/:year/:month/:day/:slug/
+timezone: Africa/Cairo
+encoding: utf-8
+
+# Exclude files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .gitignore
+
+# Include files
+include:
+  - _pages
+  - 404.html
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"

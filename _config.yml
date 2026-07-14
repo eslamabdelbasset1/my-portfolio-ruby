@@ -2,7 +2,7 @@
 title: "Eslam Abdelbasset - Senior Backend Developer | Full Stack Developer | Enterprise Solutions"
 description: "Senior Backend Developer specializing in Laravel, Multi-Tenant SaaS Architecture, and ERP Systems. Building scalable enterprise solutions."
 baseurl: ""
-url: "https://eslamabdelbasset.com"
+url: "https://eslamabdelbasset.netlify.app"
 
 # Build settings
 markdown: kramdown
@@ -29,7 +29,7 @@ social:
   links:
     - https://www.linkedin.com/in/eslamabdelbasset/
     - https://github.com/eslamabdelbasset1
-    - https://eslamabdelbasset.com/
+    - https://eslamabdelbasset.netlify.app/
 
 # Jekyll settings
 permalink: /blog/:year/:month/:day/:slug/
@@ -42,6 +42,9 @@ exclude:
   - Gemfile.lock
   - README.md
   - .gitignore
+  - netlify.toml
+  - CNAME
+  - .netlify
 
 # Include files
 include:

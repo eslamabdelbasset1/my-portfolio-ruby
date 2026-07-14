@@ -2,7 +2,7 @@
 title: "Eslam Abdelbasset - Senior Backend Developer | Full Stack Developer | Enterprise Solutions"
 description: "Senior Backend Developer specializing in Laravel, Multi-Tenant SaaS Architecture, and ERP Systems. Building scalable enterprise solutions."
 baseurl: ""
-url: "https://eslamabdelbasset.netlify.app"
+url: "https://eslamabdelbasset.vercel.app"
 
 # Build settings
 markdown: kramdown
@@ -29,7 +29,7 @@ social:
   links:
     - https://www.linkedin.com/in/eslamabdelbasset/
     - https://github.com/eslamabdelbasset1
-    - https://eslamabdelbasset.netlify.app/
+    - https://eslamabdelbasset.vercel.app/
 
 # Jekyll settings
 permalink: /blog/:year/:month/:day/:slug/

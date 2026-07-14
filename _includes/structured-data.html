@@ -2,17 +2,17 @@
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://eslamabdelbasset.com/#person",
+  "@id": "{{ site.url }}/#person",
   "name": "Eslam Abdelbasset",
   "alternateName": ["Eslam Abdelbasset", "إسلام عبدالباسط"],
   "jobTitle": "Senior Backend Developer",
   "description": "Senior Backend Developer specializing in Laravel, Multi-Tenant SaaS Architecture, and ERP Systems.",
-  "url": "https://eslamabdelbasset.com",
+  "url": "{{ site.url }}",
   "email": "eslamabdelbasset1@gmail.com",
   "telephone": "+201060838210",
   "image": {
     "@type": "ImageObject",
-    "url": "https://eslamabdelbasset.com/assets/me-image.png",
+    "url": "{{ '/assets/me-image.png' | absolute_url }}",
     "width": 400,
     "height": 400
   },
@@ -30,7 +30,7 @@
     "https://www.linkedin.com/in/eslamabdelbasset/",
     "https://github.com/eslamabdelbasset1",
     "https://wa.me/201060838210",
-    "https://eslamabdelbasset.com"
+    "{{ site.url }}"
   ],
   "knowsAbout": [
     "Software Engineering",
@@ -78,7 +78,7 @@
   "worksFor": {
     "@type": "Organization",
     "name": "Freelance / Independent Consultant",
-    "url": "https://eslamabdelbasset.com"
+    "url": "{{ site.url }}"
   }
 }
 </script>
@@ -87,12 +87,12 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": "https://eslamabdelbasset.com/#website",
+  "@id": "{{ site.url }}/#website",
   "name": "Eslam Abdelbasset — Senior Backend Developer",
-  "url": "https://eslamabdelbasset.com",
+  "url": "{{ site.url }}",
   "author": {
     "@type": "Person",
-    "@id": "https://eslamabdelbasset.com/#person"
+    "@id": "{{ site.url }}/#person"
   },
   "description": "Senior Backend Developer specializing in Laravel, Multi-Tenant SaaS Architecture, and ERP Systems. Available for hire."
 }
@@ -102,12 +102,12 @@
 {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
-  "@id": "https://eslamabdelbasset.com/#profilepage",
+  "@id": "{{ site.url }}/#profilepage",
   "name": "Eslam Abdelbasset — Senior Backend Developer",
-  "url": "https://eslamabdelbasset.com",
+  "url": "{{ site.url }}",
   "mainEntity": {
     "@type": "Person",
-    "@id": "https://eslamabdelbasset.com/#person"
+    "@id": "{{ site.url }}/#person"
   }
 }
 </script>

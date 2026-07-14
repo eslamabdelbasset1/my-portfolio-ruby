@@ -1,0 +1,23 @@
+[build]
+  command = "bundle install && JEKYLL_ENV=production bundle exec jekyll build"
+  publish = "_site"
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 301
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog/"
+  status = 301
+
+[[redirects]]
+  from = "/tags"
+  to = "/tags/"
+  status = 301
+
+[[redirects]]
+  from = "/tags/:tag"
+  to = "/tags/:tag.html"
+  status = 200

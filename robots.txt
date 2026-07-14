@@ -1,3 +1,5 @@
+---
+---
 User-agent: *
 Allow: /
 
@@ -7,7 +9,7 @@ Allow: /contact
 Allow: /_posts/
 
 # Sitemap location
-Sitemap: https://eslamabdelbasset.com/sitemap.xml
+Sitemap: {{ '/sitemap.xml' | absolute_url }}
 
 # Optimize crawl budget - block unnecessary files
 Disallow: /vendor/
@@ -19,6 +21,6 @@ Disallow: /.gitignore
 Disallow: /README.md
 
 # Allow search engines to crawl important assets
-Allow: /assets/me.jpg
+Allow: /assets/me-image.png
 Allow: /favicon.svg
 Allow: /assets/style.css

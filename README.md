@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/img/hero-image.png" alt="Eslam Abdelbasset" width="120" style="border-radius: 50%; box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);" />
+  <img src="assets/me-image.png" alt="Eslam Abdelbasset" width="120" style="border-radius: 50%; box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);" />
   
   # Eslam Abdelbasset — Premium Portfolio
 
@@ -23,7 +23,7 @@ This repository contains the source code for my professional portfolio and perso
 
 The site utilizes a custom **"Premium Dark + Sky Blue"** design system, heavily featuring glassmorphism, responsive grid sliders, and native mobile-first UX patterns.
 
-## 🚀 Key Features
+## Key Features
 
 - **Custom Glassmorphism UI:** A handcrafted, ultra-premium dark theme using native CSS variables (`--bg-surface`, `--accent`, `--border-active`) for a frosted-glass aesthetic.
 - **Native CSS Sliders:** High-performance, horizontal `scroll-snap` sliders with fallback JS arrow controls for both Featured Projects and Latest Articles.
@@ -32,7 +32,7 @@ The site utilizes a custom **"Premium Dark + Sky Blue"** design system, heavily 
 - **Performance Optimized:** Static site generation means zero database queries, instant page loads, and perfect Core Web Vitals.
 - **Modern Iconography:** Powered by [Lucide Icons](https://lucide.dev/) injected dynamically for crisp, scalable vector graphics.
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **Framework:** [Jekyll](https://jekyllrb.com/) (Ruby-based Static Site Generator)
 - **Styling:** Custom Vanilla CSS3 (No bulky frameworks)

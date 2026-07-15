@@ -5,7 +5,7 @@
 
   **Senior Software Engineer | Full-Stack Developer | Enterprise Solutions Architect**
 
-  [![Netlify Status](https://api.netlify.com/api/v1/badges/16dec0d1-269d-41ae-b5a0-6c52c6c853ef/deploy-status)](https://app.netlify.com/projects/eslamabdelbasset/deploys)
+  [![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)](https://vercel.com/)
   [![Ruby](https://img.shields.io/badge/Ruby-CC342D?style=flat-square&logo=ruby&logoColor=white)](https://www.ruby-lang.org/)
   [![Jekyll](https://img.shields.io/badge/Jekyll-CC2927?style=flat-square&logo=jekyll&logoColor=white)](https://jekyllrb.com/)
   [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
@@ -37,7 +37,7 @@ The site utilizes a custom **"Premium Dark + Sky Blue"** design system, heavily 
 - **Framework:** [Jekyll](https://jekyllrb.com/) (Ruby-based Static Site Generator)
 - **Styling:** Custom Vanilla CSS3 (No bulky frameworks)
 - **Scripting:** Vanilla JavaScript (ES6+)
-- **Hosting & CI/CD:** [Netlify](https://www.netlify.com/)
+- **Hosting & CI/CD:** [Vercel](https://vercel.com/)
 - **Icons:** [Lucide](https://lucide.dev/)
 
 ## 💻 Local Development

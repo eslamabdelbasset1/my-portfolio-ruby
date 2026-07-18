@@ -482,36 +482,49 @@ body::after {
 .contact-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 12px;
+  margin-top: 8px;
 }
 
 .contact-chip {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 7px 14px;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  border-radius: 8px;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
   color: var(--text-secondary);
-  font-size: 0.82rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.85rem;
   font-weight: 500;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .contact-chip svg {
-  width: 13px;
-  height: 13px;
+  width: 14px;
+  height: 14px;
   color: var(--accent);
   flex-shrink: 0;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .contact-chip:hover {
-  border-color: var(--border-active);
-  color: var(--text-primary);
-  background: var(--glass-hover);
-  transform: translateY(-2px);
+  background: rgba(56, 189, 248, 0.1);
+  border-color: rgba(56, 189, 248, 0.3);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.15);
+}
+
+.contact-chip:hover svg {
+  color: var(--accent-lite);
+  transform: scale(1.15) rotate(-5deg);
+  filter: drop-shadow(0 0 6px var(--accent-glow));
 }
 
 /* ============================================================

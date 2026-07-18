@@ -58,10 +58,10 @@ const projects = [
   },
   {
     name: "Hyper Panooramaeg",
-    url: "http://hyper.panooramaeg.com/",
-    domain: "hyper.panooramaeg.com",
-    displayUrl: "hyper.panooramaeg.com",
-    image: "https://www.google.com/s2/favicons?domain=hyper.panooramaeg.com&sz=128",
+    url: "https://hyper-eg.com/",
+    domain: "hyper-eg.com",
+    displayUrl: "hyper-eg.com",
+    image: "https://www.google.com/s2/favicons?domain=hyper-eg.com&sz=128",
     bg: "",
   },
   {

@@ -57,7 +57,7 @@ const projects = [
     bg: "",
   },
   {
-    name: "Hyper Panooramaeg",
+    name: "Hyper EG",
     url: "https://hyper-eg.com/",
     domain: "hyper-eg.com",
     displayUrl: "hyper-eg.com",

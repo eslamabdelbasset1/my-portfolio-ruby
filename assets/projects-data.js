@@ -17,11 +17,11 @@ const projects = [
     bg: "",
   },
   {
-    name: "AliBash",
-    url: "https://s.alibash.com/",
-    domain: "alibash.com",
-    displayUrl: "s.alibash.com",
-    image: "https://www.google.com/s2/favicons?domain=alibash.com&sz=128",
+    name: "Tog Stores",
+    url: "https://s.tog.sa/",
+    domain: "tog.sa",
+    displayUrl: "s.tog.sa",
+    image: "https://www.google.com/s2/favicons?domain=tog.sa&sz=128",
     bg: "",
   },
   {

@@ -2,19 +2,32 @@
 document.addEventListener('DOMContentLoaded', function() {
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
+    const navOverlay = document.getElementById('nav-overlay');
     
     if (navToggle && navMenu) {
+        const setMenuOpen = function(isOpen) {
+            navToggle.classList.toggle('active', isOpen);
+            navMenu.classList.toggle('active', isOpen);
+            if (navOverlay) navOverlay.classList.toggle('active', isOpen);
+            navToggle.setAttribute('aria-expanded', String(isOpen));
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        };
+
         navToggle.addEventListener('click', function() {
-            navToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
+            setMenuOpen(!navMenu.classList.contains('active'));
         });
+
+        if (navOverlay) {
+            navOverlay.addEventListener('click', function() {
+                setMenuOpen(false);
+            });
+        }
         
         // Close mobile menu when clicking on a link
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
-                navToggle.classList.remove('active');
-                navMenu.classList.remove('active');
+                setMenuOpen(false);
             });
         });
         
@@ -22,8 +35,20 @@ document.addEventListener('DOMContentLoaded', function() {
         document.addEventListener('click', function(event) {
             const isNavClick = navToggle.contains(event.target) || navMenu.contains(event.target);
             if (!isNavClick && navMenu.classList.contains('active')) {
-                navToggle.classList.remove('active');
-                navMenu.classList.remove('active');
+                setMenuOpen(false);
+            }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && navMenu.classList.contains('active')) {
+                setMenuOpen(false);
+                navToggle.focus();
+            }
+        });
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 1024 && navMenu.classList.contains('active')) {
+                setMenuOpen(false);
             }
         });
     }

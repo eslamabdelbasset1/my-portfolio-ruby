@@ -163,6 +163,9 @@ body::after {
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
+  padding: 8px;
+  border: 0;
+  background: transparent;
 }
 
 .nav-toggle .bar {
@@ -173,7 +176,7 @@ body::after {
   transition: 0.3s;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .nav-overlay {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;

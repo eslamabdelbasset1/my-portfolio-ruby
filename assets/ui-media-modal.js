@@ -296,7 +296,7 @@ function openUIMediaModal(projectKey) {
   const data = projectMediaData[projectKey];
   if (!data) return;
   currentModalProject = projectKey;
-  currentModalView = 'desktop';
+  currentModalView = window.innerWidth < 768 ? 'mobile' : 'desktop';
 
   let modal = document.getElementById('ui-media-modal');
   if (!modal) {
@@ -531,6 +531,6 @@ function updateModalContent(data) {
     </div>
   `;
 
-  switchModalView('desktop');
+  switchModalView(currentModalView);
   if (window.lucide) lucide.createIcons();
 }

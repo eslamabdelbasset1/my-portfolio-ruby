@@ -3455,6 +3455,13 @@ section#education {
 .cv-contact-item i,
 .cv-contact-item svg,
 .cv-contact-icon {
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  max-width: 16px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: var(--accent);
   flex-shrink: 0;
 }
@@ -5157,8 +5164,14 @@ section#education {
     transform: scale(0.94);
   }
 
-  .cv-dock-btn i {
+  .cv-dock-btn i,
+  .cv-dock-btn svg {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    max-width: 18px !important;
     color: var(--accent);
+    flex-shrink: 0;
   }
 
   .cv-dock-btn--primary {
@@ -5169,7 +5182,8 @@ section#education {
     box-shadow: 0 2px 10px rgba(56, 189, 248, 0.4) !important;
   }
 
-  .cv-dock-btn--primary i {
+  .cv-dock-btn--primary i,
+  .cv-dock-btn--primary svg {
     color: #000 !important;
   }
 

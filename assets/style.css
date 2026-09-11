@@ -4779,7 +4779,7 @@ section#education {
    ============================================================ */
 @media (max-width: 768px) {
   .cv-page {
-    padding-top: 0.5rem;
+    padding-top: 1.25rem !important;
     padding-bottom: 7.5rem; /* Essential clearance for mobile floating dock */
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -4800,8 +4800,8 @@ section#education {
     position: relative !important;
     top: auto !important;
     z-index: 20;
-    margin-top: 0.25rem;
-    margin-bottom: 1rem;
+    margin-top: 0 !important;
+    margin-bottom: 1.25rem !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
     width: 100% !important;
@@ -4881,7 +4881,7 @@ section#education {
   /* CV Sheet - Expanded to fit mobile viewport with sleek slim padding */
   .cv-sheet {
     width: 100% !important;
-    padding: 1.5rem 1.15rem !important;
+    padding: 1.75rem 1.15rem 2rem 1.15rem !important;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.09);
     margin: 0 !important;
@@ -5245,8 +5245,16 @@ section#education {
 
 /* Extra small mobile screens (< 380px) */
 @media (max-width: 380px) {
+  .cv-page {
+    padding-top: 1rem !important;
+  }
+
+  .cv-toolbar-wrap {
+    margin-bottom: 1rem !important;
+  }
+
   .cv-sheet {
-    padding: 1.25rem 0.75rem;
+    padding: 1.35rem 0.75rem 1.75rem 0.75rem !important;
   }
 
   .cv-toolbar {

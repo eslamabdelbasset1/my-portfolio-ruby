@@ -3297,6 +3297,14 @@ section#education {
   animation: pulse-dot 2s infinite;
 }
 
+.cv-status-short {
+  display: none;
+}
+
+.cv-btn-short {
+  display: none;
+}
+
 @keyframes pulse-dot {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.5; transform: scale(0.85); }
@@ -4773,42 +4781,55 @@ section#education {
     padding-bottom: 7.5rem; /* Essential clearance for mobile floating dock */
   }
 
-  /* Compact Single-Row Mobile Toolbar */
+  /* Clean, Non-Overlapping Mobile Action Bar */
   .cv-toolbar-wrap {
-    position: sticky;
-    top: 64px;
-    z-index: 45;
-    margin-bottom: 1rem;
+    position: relative !important;
+    top: auto !important;
+    z-index: 20;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding: 0;
   }
 
   .cv-toolbar {
     padding: 0.4rem 0.85rem;
     border-radius: 100px;
+    display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    background: rgba(14, 17, 23, 0.94);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(56, 189, 248, 0.25);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+    background: #0f131c;
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.65);
     gap: 0.5rem;
   }
 
   .cv-toolbar-left {
+    display: flex;
+    align-items: center;
     gap: 0.5rem;
+    flex-shrink: 0;
   }
 
   .cv-back-btn {
     padding: 0.25rem 0.5rem;
     font-size: 0.8rem;
     gap: 0.25rem;
+    color: #94a3b8;
   }
 
   .cv-status-pill {
     padding: 0.2rem 0.55rem;
     font-size: 0.7rem;
     gap: 0.35rem;
+  }
+
+  .cv-status-full {
+    display: none !important;
+  }
+
+  .cv-status-short {
+    display: inline !important;
   }
 
   /* On mobile phones, hide the redundant secondary buttons to keep the top clean */
@@ -4820,12 +4841,23 @@ section#education {
 
   .cv-toolbar-actions {
     margin: 0;
+    flex-shrink: 0;
   }
 
   .cv-toolbar-actions .btn-cv-primary {
     padding: 0.35rem 0.85rem;
     font-size: 0.78rem;
     border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  .cv-btn-full {
+    display: none !important;
+  }
+
+  .cv-btn-short {
+    display: inline !important;
+    font-weight: 700;
   }
 
   /* CV Sheet */

@@ -1,6 +1,6 @@
 # Site settings
-title: "Eslam Abdelbasset - Senior Backend Developer | Full Stack Developer | Enterprise Solutions"
-description: "Senior Backend Developer specializing in Laravel, Multi-Tenant SaaS Architecture, and ERP Systems. Building scalable enterprise solutions."
+title: "Eslam Abdelbasset - Senior Backend Developer & Full Stack Engineer | Enterprise Solutions"
+description: "Senior Backend Developer & Full Stack Engineer with 5+ years experience architecting distributed enterprise systems, multi-tenant SaaS & ERP platforms, and high-throughput APIs."
 baseurl: ""
 url: "https://eslamabdelbasset.vercel.app"
 
@@ -18,8 +18,8 @@ paginate_path: "/blog/page/:num/"
 
 # SEO settings
 author: Eslam Abdelbasset
-og_title: "Eslam Abdelbasset — Senior Backend Developer"
-og_description: "Senior Backend Developer specializing in Laravel, Multi-Tenant SaaS Architecture, and ERP Systems."
+og_title: "Eslam Abdelbasset — Senior Backend Developer & Full Stack Engineer"
+og_description: "Senior Backend Developer & Full Stack Engineer with 5+ years experience architecting distributed enterprise systems, multi-tenant SaaS & ERP platforms, and high-throughput APIs."
 twitter:
   username: eslamabdelbasset1
   card: summary_large_image

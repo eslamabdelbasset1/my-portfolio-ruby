@@ -1,0 +1,14 @@
+{
+  "name": "my-portfolio-eslam",
+  "version": "1.0.0",
+  "description": "Portfolio and CV for Eslam Abdelbasset - Senior Backend Developer & Full Stack Engineer",
+  "type": "module",
+  "scripts": {
+    "dev": "node serve.mjs",
+    "start": "node serve.mjs",
+    "serve": "node serve.mjs"
+  },
+  "keywords": [],
+  "author": "Eslam Abdelbasset",
+  "license": "ISC"
+}

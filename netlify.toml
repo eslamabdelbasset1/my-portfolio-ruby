@@ -3,6 +3,16 @@
   publish = "_site"
 
 [[redirects]]
+  from = "/cv"
+  to = "/cv.html"
+  status = 301
+
+[[redirects]]
+  from = "/resume"
+  to = "/cv.html"
+  status = 301
+
+[[redirects]]
   from = "/contact"
   to = "/contact.html"
   status = 301

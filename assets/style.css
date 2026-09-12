@@ -2345,9 +2345,14 @@ body::after {
 @media (max-width: 480px) {
   .hero-section { padding: 28px 16px 44px; }
 
+  .hero-avatar-col {
+    padding-inline: 12px;
+  }
+
   .hero-avatar-wrap {
-    width: 260px;
-    height: 260px;
+    width: min(260px, calc(100vw - 64px));
+    height: auto;
+    aspect-ratio: 1;
   }
 
   /* Full-width CTA buttons */

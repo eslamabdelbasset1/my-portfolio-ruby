@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" width="100%" height="100%">
   <defs>
-    <!-- Sky Blue to Indigo Gradient matching Portfolio Palette -->
+    <!-- Royal Blue Gradient matching Portfolio Palette -->
     <linearGradient id="eaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38BDF8" />
-      <stop offset="45%" stop-color="#0284C7" />
-      <stop offset="100%" stop-color="#818CF8" />
+      <stop offset="0%" stop-color="#026BFF" />
+      <stop offset="45%" stop-color="#0050CC" />
+      <stop offset="100%" stop-color="#268BFF" />
     </linearGradient>
 
     <linearGradient id="eaGradLight" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#BAE6FD" />
-      <stop offset="100%" stop-color="#38BDF8" />
+      <stop offset="0%" stop-color="#A0CFFF" />
+      <stop offset="100%" stop-color="#026BFF" />
     </linearGradient>
 
     <!-- Dark High-Tech Hexagon Surface -->
@@ -19,8 +19,8 @@
     </linearGradient>
 
     <radialGradient id="eaCoreGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.22" />
-      <stop offset="80%" stop-color="#818CF8" stop-opacity="0.04" />
+      <stop offset="0%" stop-color="#026BFF" stop-opacity="0.22" />
+      <stop offset="80%" stop-color="#268BFF" stop-opacity="0.04" />
       <stop offset="100%" stop-color="#07080A" stop-opacity="0" />
     </radialGradient>
 
@@ -50,12 +50,12 @@
            opacity="0.45" />
 
   <!-- Backend Architecture Network Vertices -->
-  <circle cx="100" cy="18" r="3" fill="#38BDF8" />
-  <circle cx="172" cy="59" r="3" fill="#818CF8" />
-  <circle cx="172" cy="141" r="3" fill="#818CF8" />
-  <circle cx="100" cy="182" r="3" fill="#38BDF8" />
-  <circle cx="28" cy="141" r="3" fill="#38BDF8" />
-  <circle cx="28" cy="59" r="3" fill="#38BDF8" />
+  <circle cx="100" cy="18" r="3" fill="#026BFF" />
+  <circle cx="172" cy="59" r="3" fill="#268BFF" />
+  <circle cx="172" cy="141" r="3" fill="#268BFF" />
+  <circle cx="100" cy="182" r="3" fill="#026BFF" />
+  <circle cx="28" cy="141" r="3" fill="#026BFF" />
+  <circle cx="28" cy="59" r="3" fill="#026BFF" />
 
   <!-- Monogram Group (Centered at X: 100, Y: 100) -->
   <g filter="url(#eaGlowFilter)">
@@ -74,14 +74,14 @@
 
     <!-- Beveled Light Reflection on Right Leg of A -->
     <path d="M 138,60 L 164,140 L 157,140 L 133,65 Z"
-          fill="#BAE6FD"
+          fill="#A0CFFF"
           opacity="0.4" />
 
     <!-- High-Performance Circuit Bridge: Connects E & A through data node -->
     <path d="M 88,99.5 L 120,99.5"
-          stroke="#38BDF8"
+          stroke="#026BFF"
           stroke-width="4.5"
           stroke-linecap="round" />
-    <circle cx="104" cy="99.5" r="3.5" fill="#38BDF8" />
+    <circle cx="104" cy="99.5" r="3.5" fill="#026BFF" />
   </g>
 </svg>

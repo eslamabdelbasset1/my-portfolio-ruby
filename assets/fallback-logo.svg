@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
   <defs>
     <linearGradient id="fallbackGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38BDF8" />
-      <stop offset="50%" stop-color="#0284C7" />
-      <stop offset="100%" stop-color="#818CF8" />
+      <stop offset="0%" stop-color="#026BFF" />
+      <stop offset="50%" stop-color="#0050CC" />
+      <stop offset="100%" stop-color="#268BFF" />
     </linearGradient>
     <radialGradient id="fbGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.18" />
+      <stop offset="0%" stop-color="#026BFF" stop-opacity="0.18" />
       <stop offset="100%" stop-color="#0E1218" stop-opacity="0" />
     </radialGradient>
   </defs>
@@ -21,6 +21,6 @@
   <path d="M 61,33 L 70,33 L 83,67 L 73,67 L 70,57 L 57,57 L 54,67 L 45,67 Z M 65,42 L 60,51 L 68,51 Z" fill="#FFFFFF" />
 
   <!-- Backend Data Node Connection -->
-  <line x1="45" y1="50" x2="60" y2="50" stroke="#38BDF8" stroke-width="3" stroke-linecap="round" />
-  <circle cx="52" cy="50" r="2.2" fill="#38BDF8" />
+  <line x1="45" y1="50" x2="60" y2="50" stroke="#026BFF" stroke-width="3" stroke-linecap="round" />
+  <circle cx="52" cy="50" r="2.2" fill="#026BFF" />
 </svg>

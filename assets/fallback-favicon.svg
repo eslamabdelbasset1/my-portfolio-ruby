@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
   <defs>
     <linearGradient id="favGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00d2ff" />
-      <stop offset="50%" stop-color="#0070f3" />
-      <stop offset="100%" stop-color="#7928ca" />
+      <stop offset="0%" stop-color="#026BFF" />
+      <stop offset="50%" stop-color="#0050CC" />
+      <stop offset="100%" stop-color="#268BFF" />
     </linearGradient>
     <linearGradient id="favGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.15" />
-      <stop offset="100%" stop-color="#0070f3" stop-opacity="0.05" />
+      <stop offset="0%" stop-color="#268BFF" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#026BFF" stop-opacity="0.05" />
     </linearGradient>
   </defs>
   <rect x="6" y="6" width="88" height="88" rx="22" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
@@ -18,11 +18,11 @@
   <path d="M50 50 L76 38" stroke="url(#favGrad)" stroke-width="3" stroke-linecap="round"/>
   <path d="M50 50 L24 38" stroke="url(#favGrad)" stroke-width="3" stroke-linecap="round"/>
   <!-- Center tech core node -->
-  <circle cx="50" cy="50" r="5.5" fill="#00d2ff"/>
-  <circle cx="50" cy="24" r="3" fill="#0070f3"/>
-  <circle cx="76" cy="38" r="3" fill="#7928ca"/>
-  <circle cx="76" cy="62" r="3" fill="#7928ca"/>
-  <circle cx="50" cy="76" r="3" fill="#0070f3"/>
-  <circle cx="24" cy="62" r="3" fill="#00d2ff"/>
-  <circle cx="24" cy="38" r="3" fill="#00d2ff"/>
+  <circle cx="50" cy="50" r="5.5" fill="#026BFF"/>
+  <circle cx="50" cy="24" r="3" fill="#0050CC"/>
+  <circle cx="76" cy="38" r="3" fill="#268BFF"/>
+  <circle cx="76" cy="62" r="3" fill="#268BFF"/>
+  <circle cx="50" cy="76" r="3" fill="#0050CC"/>
+  <circle cx="24" cy="62" r="3" fill="#026BFF"/>
+  <circle cx="24" cy="38" r="3" fill="#026BFF"/>
 </svg>

@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/me-image.png" alt="Eslam Abdelbasset" width="120" style="border-radius: 50%; box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);" />
+  <img src="assets/me-image.png" alt="Eslam Abdelbasset" width="120" style="border-radius: 50%; box-shadow: 0 0 20px rgba(2, 107, 255, 0.4);" />
   
   # Eslam Abdelbasset — Premium Portfolio
 
@@ -21,7 +21,7 @@
 
 This repository contains the source code for my professional portfolio and personal blog. It is a highly optimized, statically generated website built with **Jekyll**, showcasing my expertise in building scalable enterprise systems, SaaS platforms, and modern web applications. 
 
-The site utilizes a custom **"Premium Dark + Sky Blue"** design system, heavily featuring glassmorphism, responsive grid sliders, and native mobile-first UX patterns.
+The site utilizes a custom **"Premium Dark + Royal Blue (#026BFF)"** design system, heavily featuring glassmorphism, responsive grid sliders, and native mobile-first UX patterns.
 
 ## Key Features
 

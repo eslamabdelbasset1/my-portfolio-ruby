@@ -727,156 +727,64 @@ body::after {
   letter-spacing: 0.12em;
 }
 
-/* ── Orbit scene ────────────────────────────────────── */
-
-@keyframes orbit-cw  { to { transform: rotate( 360deg); } }
-@keyframes orbit-ccw { to { transform: rotate(-360deg); } }
-
-.orbit-scene {
+/* Company showcase */
+.companies-header { flex-wrap: wrap; }
+.companies-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 14px;
+}
+.company-card {
   position: relative;
-  width: 570px;
-  height: 570px;
-  margin: 36px auto 0;
-}
-
-/* Ring tracks */
-.orbit-ring {
-  position: absolute;
-  top: 50%; left: 50%;
-  border-radius: 50%;
-  border: 1px dashed rgba(56, 189, 248, 0.18);
-}
-
-.orbit-ring--inner {
-  width: 300px; height: 300px;
-  margin: -150px 0 0 -150px;
-  animation: orbit-cw 22s linear infinite;
-}
-
-.orbit-ring--outer {
-  width: 510px; height: 510px;
-  margin: -255px 0 0 -255px;
-  animation: orbit-ccw 38s linear infinite;
-}
-
-/* Each logo is positioned via x/y coordinates (no rotation on wrapper,
-   so inner orbit-upright only needs to cancel the ring spin) */
-.orbit-item-wrap {
-  position: absolute;
-  top: calc(50% + var(--oy) - 31px);
-  left: calc(50% + var(--ox) - 31px);
-  width: 62px; height: 62px;
-}
-
-/* Counter-rotate to keep logos upright */
-.orbit-ring--inner .orbit-upright { animation: orbit-ccw 22s linear infinite; }
-.orbit-ring--outer .orbit-upright { animation: orbit-cw  38s linear infinite; }
-
-/* Logo circle */
-.orbit-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 62px; height: 62px;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  border-radius: 50%;
-  text-decoration: none;
-  overflow: visible;
-  position: relative;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-}
-
-.orbit-logo:hover {
-  border-color: var(--border-active);
-  box-shadow: 0 0 18px var(--accent-glow);
-  transform: scale(1.15);
-  z-index: 20;
-}
-
-.orbit-logo img {
-  width: 38px; height: 38px;
-  object-fit: contain;
-  border-radius: 4px;
-  display: block;
-}
-
-/* Tooltip */
-.orbit-tooltip {
-  position: absolute;
-  bottom: calc(100% + 8px);
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--bg-elevated);
-  color: var(--text-primary);
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 0.62rem;
-  font-weight: 600;
-  white-space: nowrap;
-  padding: 4px 9px;
-  border-radius: 6px;
-  border: 1px solid var(--border-subtle);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.15s ease;
-  z-index: 30;
-}
-
-.orbit-logo:hover .orbit-tooltip { opacity: 1; }
-
-/* Center orb */
-.orbit-center {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 96px; height: 96px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 40% 35%, var(--bg-elevated), var(--bg-surface));
-  border: 1px solid var(--border-active);
-  box-shadow:
-    0 0 0 8px rgba(56, 189, 248, 0.04),
-    0 0 32px rgba(56, 189, 248, 0.14),
-    inset 0 0 16px rgba(56, 189, 248, 0.06);
-  z-index: 10;
+  gap: 16px;
+  padding: 24px 14px 20px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  background: linear-gradient(145deg, var(--bg-elevated), var(--bg-surface));
+  text-decoration: none;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
-
-.orbit-center-num {
+.company-card:hover, .company-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .15);
+}
+.company-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.company-logo {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 80px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.company-logo img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: contain; }
+.company-initials {
   font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 1.9rem;
-  font-weight: 800;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: .06em;
   color: var(--accent);
-  line-height: 1;
 }
-
-.orbit-center-txt {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 0.5rem;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-top: 3px;
-}
-
-/* Mobile: center + scale the orbit scene */
+.company-logo--fallback { background: var(--accent-dim); border: 1px solid var(--border-subtle); }
+.company-name { color: var(--text-primary); font-size: .78rem; font-weight: 600; line-height: 1.5; text-align: center; }
+.company-detail { display: block; margin-top: 4px; color: var(--text-secondary); font-size: .65rem; font-weight: 400; }
+.company-arrow { position: absolute; top: 7px; right: 9px; color: var(--text-secondary); font-size: 12px; }
+@media (max-width: 1000px) { .companies-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 @media (max-width: 640px) {
-  .companies-section {
-    overflow: hidden; /* clip the scaled scene edges */
-  }
-
-  .orbit-scene {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%) scale(0.54);
-    transform-origin: top center;
-    margin-top: 36px;
-    margin-bottom: -240px;
-    margin-left: 0;
-    margin-right: 0;
-  }
+  .companies-section { padding: 40px 20px; }
+  .companies-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .company-card { padding: 22px 12px 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .company-card { transition: none; }
+  .company-card:hover, .company-card:focus-visible { transform: none; }
 }
 
 /* ── Projects slider (fallback / legacy) ─────────────── */

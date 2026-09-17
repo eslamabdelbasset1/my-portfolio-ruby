@@ -38,10 +38,11 @@ const projects = [
     domain: "transrare.com",
     displayUrl: "transrare.com",
     image: "assets/img/companies/transrare.svg",
-    bg: "#ffffff",
+    bg: "#142d3b",
   },
   {
-    name: "Loc Camp · xLingo Multi-Tenant SaaS",
+    name: "Loc Camp · xLingo",
+    detail: "Multi-Tenant SaaS",
     url: "https://loc-camp.xlingo.net",
     domain: "loc-camp.xlingo.net",
     displayUrl: "loc-camp.xlingo.net",
@@ -61,7 +62,7 @@ const projects = [
     url: "https://www.layoutintl.com",
     domain: "layoutintl.com",
     displayUrl: "layoutintl.com",
-    image: "https://www.google.com/s2/favicons?domain=layoutintl.com&sz=128",
+    image: "assets/img/works/layout-International.svg",
     bg: "",
   },
   {
@@ -69,7 +70,7 @@ const projects = [
     url: "https://tog.sa/",
     domain: "tog.sa",
     displayUrl: "tog.sa",
-    image: "https://www.google.com/s2/favicons?domain=tog.sa&sz=128",
+    image: "assets/img/works/tog.png",
     bg: "",
   },
   {
@@ -77,7 +78,7 @@ const projects = [
     url: "https://s.tog.sa/",
     domain: "tog.sa",
     displayUrl: "s.tog.sa",
-    image: "https://www.google.com/s2/favicons?domain=tog.sa&sz=128",
+    image: "assets/img/works/tog.png",
     bg: "",
   },
   {
@@ -85,7 +86,7 @@ const projects = [
     url: "https://loc-camp.com",
     domain: "loc-camp.com",
     displayUrl: "loc-camp.com",
-    image: "https://www.google.com/s2/favicons?domain=loc-camp.com&sz=128",
+    image: "assets/img/works/loc-camp.jpg",
     bg: "",
   },
   {
@@ -93,7 +94,7 @@ const projects = [
     url: "https://www.const-tech.org",
     domain: "const-tech.org",
     displayUrl: "const-tech.org",
-    image: "https://www.google.com/s2/favicons?domain=const-tech.org&sz=128",
+    image: "assets/img/works/const-tech.jpg",
     bg: "",
   },
   {
@@ -101,7 +102,7 @@ const projects = [
     url: "https://sneakersdubai.com",
     domain: "sneakersdubai.com",
     displayUrl: "sneakersdubai.com",
-    image: "https://www.google.com/s2/favicons?domain=sneakersdubai.com&sz=128",
+    image: "assets/img/works/sneakers-dubai.png",
     bg: "",
   },
   {
@@ -109,7 +110,7 @@ const projects = [
     url: "https://panooramaeg.com",
     domain: "panooramaeg.com",
     displayUrl: "panooramaeg.com",
-    image: "https://www.google.com/s2/favicons?domain=panooramaeg.com&sz=128",
+    image: "",
     bg: "",
   },
   {
@@ -117,7 +118,7 @@ const projects = [
     url: "https://hyper-eg.com/",
     domain: "hyper-eg.com",
     displayUrl: "hyper-eg.com",
-    image: "https://www.google.com/s2/favicons?domain=hyper-eg.com&sz=128",
+    image: "",
     bg: "",
   },
   {
@@ -125,7 +126,7 @@ const projects = [
     url: "https://bazmethod.com/",
     domain: "bazmethod.com",
     displayUrl: "bazmethod.com",
-    image: "https://www.google.com/s2/favicons?domain=bazmethod.com&sz=128",
+    image: "",
     bg: "",
   },
   {
@@ -133,7 +134,7 @@ const projects = [
     url: "http://elbayanlawfirm.info/",
     domain: "elbayanlawfirm.info",
     displayUrl: "elbayanlawfirm.info",
-    image: "https://www.google.com/s2/favicons?domain=elbayanlawfirm.info&sz=128",
+    image: "",
     bg: "",
   },
   {
@@ -141,7 +142,7 @@ const projects = [
     url: "https://iapallet.com/",
     domain: "iapallet.com",
     displayUrl: "iapallet.com",
-    image: "https://www.google.com/s2/favicons?domain=iapallet.com&sz=128",
+    image: "",
     bg: "",
   }
 ];

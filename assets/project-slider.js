@@ -254,49 +254,64 @@ class ProjectSlider {
     });
   }
 
-  // ── Orbit rendering ──────────────────────────────────────────
-
-  createOrbitItem(project, angleDeg, radius) {
-    const rad = (angleDeg * Math.PI) / 180;
-    const x   = Math.round(Math.cos(rad) * radius);
-    const y   = Math.round(Math.sin(rad) * radius);
-    const bg = project.bg || '';
-    return `
-      <div class="orbit-item-wrap" style="--ox:${x}px;--oy:${y}px">
-        <div class="orbit-upright">
-          <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="orbit-logo" title="${project.name}"${bg ? ` style="background:${bg}"` : ''}>
-            <img src="${project.image}" alt="${project.name}"
-                 onerror="this.onerror=null;this.src='https://icons.duckduckgo.com/ip3/${project.domain}.ico'" />
-            <span class="orbit-tooltip">${project.name}</span>
-          </a>
-        </div>
-      </div>`;
-  }
-
-  renderOrbits() {
-    const innerRing = document.getElementById('orbit-inner');
-    const outerRing = document.getElementById('orbit-outer');
-    if (!innerRing || !outerRing) return;
-
-    const mid = Math.ceil(projects.length / 2);
-    const inner = projects.slice(0, mid);
-    const outer = projects.slice(mid);
-
-    inner.forEach((p, i) => {
-      const angle = (i / inner.length) * 360 - 90; // start from top
-      innerRing.innerHTML += this.createOrbitItem(p, angle, 130);
+  renderCompanies() {
+    const grid = document.getElementById('companies-grid');
+    if (!grid) return;
+    grid.replaceChildren();
+    projects.forEach(project => {
+      const card = document.createElement('a');
+      card.className = 'company-card';
+      card.href = project.url;
+      card.target = '_blank';
+      card.rel = 'noopener noreferrer';
+      card.title = `${project.name} — ${project.displayUrl}`;
+      const logo = document.createElement('span');
+      logo.className = 'company-logo';
+      if (project.bg) logo.style.background = project.bg;
+      logo.setAttribute('aria-hidden', 'true');
+      const showFallback = () => {
+        logo.classList.add('company-logo--fallback');
+        logo.style.background = '';
+        const initials = document.createElement('span');
+        initials.className = 'company-initials';
+        initials.textContent = project.name.split(/[^a-z0-9]+/i).filter(Boolean).slice(0, 2).map(word => word[0]).join('').toUpperCase();
+        logo.replaceChildren(initials);
+      };
+      if (project.image) {
+        const img = document.createElement('img');
+        img.alt = '';
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        img.addEventListener('error', showFallback, { once: true });
+        img.src = project.image;
+        logo.append(img);
+      } else {
+        showFallback();
+      }
+      const name = document.createElement('span');
+      name.className = 'company-name';
+      name.textContent = project.name;
+      if (project.detail) {
+        const detail = document.createElement('span');
+        detail.className = 'company-detail';
+        detail.textContent = project.detail;
+        name.append(detail);
+      }
+      const arrow = document.createElement('span');
+      arrow.className = 'company-arrow';
+      arrow.textContent = '↗';
+      arrow.setAttribute('aria-hidden', 'true');
+      card.append(logo, name, arrow);
+      grid.append(card);
     });
-
-    outer.forEach((p, i) => {
-      const angle = (i / outer.length) * 360 - 90;
-      outerRing.innerHTML += this.createOrbitItem(p, angle, 235);
-    });
+    const count = document.querySelector('.companies-count');
+    if (count) count.textContent = `${projects.length} companies & platforms`;
   }
 
   // Initialize all slider/orbit functionality
   init() {
-    if (document.getElementById('orbit-inner')) {
-      this.renderOrbits();
+    if (document.getElementById('companies-grid')) {
+      this.renderCompanies();
     } else {
       this.renderProjectSliders();
       this.initializeDragSliders();

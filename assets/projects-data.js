@@ -1,6 +1,14 @@
 // Projects data array - easy to manage and update
 const projects = [
   {
+    name: "Erkaz Mining",
+    url: "https://erkaz.online",
+    domain: "erkaz.online",
+    displayUrl: "erkaz.online",
+    image: "assets/img/companies/erkaz.svg",
+    bg: "#0F172A",
+  },
+  {
     name: "Alshamel Holding",
     url: "https://alshamelholding.com",
     domain: "alshamelholding.com",

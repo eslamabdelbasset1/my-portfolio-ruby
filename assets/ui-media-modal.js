@@ -1,5 +1,34 @@
 // Interactive UI & Mobile Media Preview System for Projects
 const projectMediaData = {
+  "erkaz": {
+    name: "Erkaz Mining & Operations ERP",
+    category: "Heavy Fleet & Operations Cloud ERP",
+    logo: "/assets/img/companies/erkaz.svg",
+    url: "https://erkaz.online",
+    displayUrl: "erkaz.online",
+    metrics: "Heavy Fleet Telematics • Diesel & Fuel Tracking • Shift Cost Accounting",
+    tech: ["Laravel", "Enterprise ERP", "RBAC Matrices", "Fleet Telematics", "Redis"],
+    desktopUI: {
+      headline: "Cloud Fleet & Heavy Equipment Operations Platform",
+      subline: "Automated fuel consumption tracking, shift handovers, preventative maintenance, and financial intelligence.",
+      badge: "Heavy Machinery ERP",
+      stats: [
+        { label: "Fleet Telematics", val: "Real-Time Tracking" },
+        { label: "Audit Accuracy", val: "+50% Efficiency" },
+        { label: "Role Control", val: "Strict RBAC" }
+      ],
+      features: [
+        "Real-time monitoring of heavy equipment work hours, maintenance logs, and operational status",
+        "Automated diesel/fuel consumption calculations and shift transition auditing reports",
+        "Production tracking with financial intelligence and multi-department approval cycles"
+      ]
+    },
+    mobileUI: {
+      title: "Erkaz Fleet Mobile",
+      subtitle: "Field Operations & Shift Handover",
+      actions: ["Log Fuel", "Shift Handover", "Equipment Status"]
+    }
+  },
   "tog": {
     name: "Tog.sa & Tog Stores",
     category: "Multi-Tenant SaaS · ZATCA Phase 2",

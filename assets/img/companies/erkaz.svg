@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="55%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#020617" />
+    </radialGradient>
+    
+    <linearGradient id="goldRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A" />
+      <stop offset="35%" stop-color="#F59E0B" />
+      <stop offset="70%" stop-color="#D97706" />
+      <stop offset="100%" stop-color="#78350F" />
+    </linearGradient>
+
+    <linearGradient id="goldLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFBEB" />
+      <stop offset="40%" stop-color="#FDE68A" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+
+    <linearGradient id="goldDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D97706" />
+      <stop offset="60%" stop-color="#B45309" />
+      <stop offset="100%" stop-color="#78350F" />
+    </linearGradient>
+
+    <linearGradient id="sapphireCore" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a0cfff" />
+      <stop offset="38%" stop-color="#026BFF" />
+      <stop offset="75%" stop-color="#268bf0" />
+      <stop offset="100%" stop-color="#1672cc" />
+    </linearGradient>
+
+    <linearGradient id="sapphireDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#79bbff" />
+      <stop offset="50%" stop-color="#026BFF" />
+      <stop offset="100%" stop-color="#1672cc" />
+    </linearGradient>
+
+    <filter id="coreGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="glow" />
+      <feComposite in="SourceGraphic" in2="glow" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Squircle Base with Gold Double Rim -->
+  <rect x="4" y="4" width="92" height="92" rx="22" fill="url(#bgGrad)" stroke="url(#goldRim)" stroke-width="2" />
+  <rect x="7.5" y="7.5" width="85" height="85" rx="19" fill="none" stroke="#026BFF" stroke-width="1.2" stroke-opacity="0.55" />
+
+  <!-- Outer Beveled Shield / Chassis -->
+  <!-- Outer Shield Left Wing -->
+  <path d="M50 82 L26 68 L26 34 L33 30 L33 63 L50 74 Z" fill="url(#goldDark)" />
+  <!-- Outer Shield Right Wing -->
+  <path d="M50 82 L74 68 L74 34 L67 30 L67 63 L50 74 Z" fill="url(#goldLight)" />
+  <!-- Top Shield Peak Accents -->
+  <polygon points="50,15 54,20 46,20" fill="url(#goldLight)" />
+
+  <!-- Inner Azure / Sapphire Aura behind Crystals -->
+  <path d="M50 72 L36 62 L36 38 L50 26 L64 38 L64 62 Z" fill="#0d264a" opacity="0.9" />
+
+  <!-- Left Supporting Crystal Flank -->
+  <polygon points="36,62 43,62 45,39 37,45" fill="url(#sapphireDark)" />
+  <polygon points="37,45 45,39 41,35 34,42" fill="url(#goldDark)" />
+  <polygon points="36,62 37,45 34,42 32,58" fill="url(#goldDark)" opacity="0.8" />
+
+  <!-- Right Supporting Crystal Flank -->
+  <polygon points="64,62 57,62 55,39 63,45" fill="url(#sapphireCore)" />
+  <polygon points="63,45 55,39 59,35 66,42" fill="url(#goldLight)" />
+  <polygon points="64,62 63,45 66,42 68,58" fill="url(#goldLight)" opacity="0.8" />
+
+  <!-- Center Imperial Gold Crystal Peak (Faceted) -->
+  <!-- Left Main Facet (Reflective / Core) -->
+  <polygon points="50,16 43,28 44,56 50,68" fill="url(#goldLight)" />
+  <!-- Right Main Facet (Deeper Gold) -->
+  <polygon points="50,16 57,28 56,56 50,68" fill="url(#goldDark)" />
+  <!-- Center Top Diamond Facet -->
+  <polygon points="50,16 46,23 50,27 54,23" fill="#FFFBEB" />
+  <!-- Center Inner Sapphire Glow Diamond -->
+  <polygon points="50,29 45,41 50,54 55,41" fill="url(#sapphireCore)" filter="url(#coreGlow)" opacity="0.95" />
+  <polygon points="50,29 47,38 50,49 53,38" fill="#E0F2FE" opacity="0.9" />
+
+  <!-- Base Chevron Anchor (Earth-Moving Foundation) -->
+  <path d="M50 76 L34 66 L38 61 L50 69 L62 61 L66 66 Z" fill="url(#goldRim)" />
+  <polygon points="50,69 40,62 50,58 60,62" fill="url(#goldLight)" opacity="0.9" />
+</svg>

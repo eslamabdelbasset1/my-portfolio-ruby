@@ -264,7 +264,7 @@ class ProjectSlider {
     return `
       <div class="orbit-item-wrap" style="--ox:${x}px;--oy:${y}px">
         <div class="orbit-upright">
-          <a href="${project.url}" target="_blank" class="orbit-logo" title="${project.name}"${bg ? ` style="background:${bg}"` : ''}>
+          <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="orbit-logo" title="${project.name}"${bg ? ` style="background:${bg}"` : ''}>
             <img src="${project.image}" alt="${project.name}"
                  onerror="this.onerror=null;this.src='https://icons.duckduckgo.com/ip3/${project.domain}.ico'" />
             <span class="orbit-tooltip">${project.name}</span>

@@ -134,7 +134,7 @@ const projects = [
     url: "https://bazmethod-dashboard.com/",
     domain: "bazmethod-dashboard.com",
     displayUrl: "bazmethod-dashboard.com",
-    image: "assets/img/companies/Baz-Logo-02.png",
+    image: "assets/img/companies/bazmethod-dashboard.png",
     bg: "#ffffff",
   },
   {

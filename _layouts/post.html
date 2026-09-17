@@ -3,58 +3,147 @@ layout: default
 ---
 
 <article class="blog-post">
-  <div style="margin-bottom: 30px;">
-    <a href="/blog" class="blog-link">← Back to Blog</a>
+  <!-- TOP ACTION BAR -->
+  <div class="post-top-bar">
+    <a href="/blog" class="blog-back-btn">
+      <i data-lucide="arrow-left" size="16"></i>
+      <span>Back to All Publications</span>
+    </a>
+    <div class="post-top-actions">
+      <a href="/projects" class="post-top-link">
+        <i data-lucide="layers" size="14"></i>
+        <span>Projects</span>
+      </a>
+      <a href="/skills" class="post-top-link">
+        <i data-lucide="cpu" size="14"></i>
+        <span>Skills Matrix</span>
+      </a>
+      <button type="button" onclick="copyPostUrl(this)" class="post-share-btn" title="Copy Link to Article">
+        <i data-lucide="share-2" size="14"></i>
+        <span>Share</span>
+      </button>
+    </div>
   </div>
+
+  <!-- POST HEADER -->
   <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <div class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
-      {% if page.author %}
-      <span class="post-author">by {{ page.author }}</span>
-      {% endif %}
+    <div class="post-category-list">
       {% if page.categories %}
-      <div class="post-categories">
         {% for category in page.categories %}
-        <span class="post-category">{{ category }}</span>
+        <span class="post-category-badge">{{ category }}</span>
         {% endfor %}
-      </div>
       {% endif %}
+    </div>
+
+    <h1 class="post-title">{{ page.title }}</h1>
+
+    <div class="post-author-bar">
+      <div class="pauth-left">
+        <img src="/assets/me-image.png" alt="Eslam Abdelbasset" class="pauth-avatar">
+        <div class="pauth-details">
+          <span class="pauth-name">{{ page.author | default: "Eslam Abdelbasset" }}</span>
+          <span class="pauth-title">Senior Backend Developer &bull; Cairo, Egypt</span>
+        </div>
+      </div>
+      <div class="pauth-right">
+        <time datetime="{{ page.date | date_to_xmlschema }}">
+          <i data-lucide="calendar" size="14"></i>
+          {{ page.date | date: "%B %d, %Y" }}
+        </time>
+        <span class="post-read-est">
+          <i data-lucide="clock" size="14"></i>
+          {% assign words = content | number_of_words %}
+          {% if words < 360 %}
+            2 min read
+          {% else %}
+            {{ words | divided_by: 180 }} min read
+          {% endif %}
+        </span>
+      </div>
     </div>
   </header>
   
+  <!-- POST BODY -->
   <div class="post-content">
     {{ content }}
   </div>
   
+  <!-- TAGS -->
   {% if page.tags %}
-  <div class="post-tags">
-    <h4>Tags:</h4>
-    {% for tag in page.tags %}
-    <a href="/tags/{{ tag | slugify }}" class="post-tag-link">#{{ tag }}</a>
-    {% endfor %}
+  <div class="post-tags-container">
+    <span class="ptags-title"><i data-lucide="tag" size="14"></i> Topics:</span>
+    <div class="post-tags-list">
+      {% for tag in page.tags %}
+      <a href="/tags/{{ tag | slugify }}" class="post-tag-item">#{{ tag }}</a>
+      {% endfor %}
+    </div>
   </div>
   {% endif %}
   
+  <!-- AUTHOR RECRUITER BIO BOX -->
+  <section class="post-recruiter-bio">
+    <div class="prb-avatar-wrap">
+      <img src="/assets/me-image.png" alt="Eslam Abdelbasset" class="prb-avatar">
+      <span class="prb-status-dot" title="Available for hire"></span>
+    </div>
+    <div class="prb-content">
+      <span class="prb-kicker">Written by</span>
+      <h3 class="prb-name">Eslam Abdelbasset</h3>
+      <p class="prb-role">Senior Backend Developer &amp; Full Stack Engineer</p>
+      <p class="prb-bio">
+        5+ years architecting distributed enterprise systems, multi-tenant SaaS &amp; ERP platforms, and high-throughput APIs. Currently available for senior engineering roles, architectural consulting, and technical leadership.
+      </p>
+      <div class="prb-actions">
+        <a href="https://calendly.com/eslamabdelbasset1/30min" target="_blank" class="btn-prb-primary">
+          <i data-lucide="calendar" size="15"></i>
+          <span>Schedule an Interview</span>
+        </a>
+        <a href="/assets/Eslam_Abdelbasset_Resume.pdf" download="Eslam_Abdelbasset_Resume.pdf" class="btn-prb-outline">
+          <i data-lucide="download" size="15"></i>
+          <span>Download Resume</span>
+        </a>
+        <a href="mailto:eslamabdelbasset1@gmail.com" class="btn-prb-ghost">
+          <i data-lucide="mail" size="15"></i>
+          <span>Email Eslam</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- POST NAVIGATION & FOOTER -->
   <footer class="post-footer">
     <div class="post-navigation">
       {% if page.previous.url %}
       <a class="prev-post" href="{{ page.previous.url }}">
-        <span class="nav-label">← Previous</span>
+        <span class="nav-label">← Previous Article</span>
         <span class="nav-title">{{ page.previous.title }}</span>
       </a>
       {% endif %}
       
       {% if page.next.url %}
       <a class="next-post" href="{{ page.next.url }}">
-        <span class="nav-label">Next →</span>
+        <span class="nav-label">Next Article →</span>
         <span class="nav-title">{{ page.next.title }}</span>
       </a>
       {% endif %}
     </div>
     
     <div class="back-to-blog">
-      <a href="/blog" class="blog-link">← Back to Blog</a>
+      <a href="/blog" class="blog-link">← Return to All Articles</a>
     </div>
   </footer>
 </article>
+
+<script>
+function copyPostUrl(btn) {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    const orig = btn.innerHTML;
+    btn.innerHTML = '<i data-lucide="check" size="14"></i> <span>Copied!</span>';
+    if (window.lucide) lucide.createIcons();
+    setTimeout(() => {
+      btn.innerHTML = orig;
+      if (window.lucide) lucide.createIcons();
+    }, 2000);
+  });
+}
+</script>

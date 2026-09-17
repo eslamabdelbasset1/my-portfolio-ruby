@@ -30,10 +30,10 @@ description: "Senior Backend Developer & Full Stack Engineer with 5+ years exper
           <span class="hstat-lbl">Years Exp.</span>
         </div>
         <div class="hstat-sep"></div>
-        <div class="hstat">
-          <span class="hstat-val">20+</span>
-          <span class="hstat-lbl">Projects</span>
-        </div>
+        <a href="/projects" class="hstat" style="text-decoration: none; color: inherit; cursor: pointer;" title="Explore All Projects">
+          <span class="hstat-val" style="color: var(--accent);">20+</span>
+          <span class="hstat-lbl" style="text-decoration: underline; text-decoration-color: var(--accent);">Projects →</span>
+        </a>
         <div class="hstat-sep"></div>
         <div class="hstat">
           <span class="hstat-val">10+</span>
@@ -228,7 +228,10 @@ description: "Senior Backend Developer & Full Stack Engineer with 5+ years exper
 <!-- TECH SKILLS -->
 <section class="skills-section">
   <div class="skills-inner">
-    <h2 class="section-label">Tech Stack &amp; Tools</h2>
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 24px;">
+      <h2 class="section-label" style="margin-bottom: 0;">Tech Stack &amp; Tools</h2>
+      <a href="/skills" style="color: var(--accent); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.88rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">View Full Skills &amp; Architecture Matrix →</a>
+    </div>
 
     <div class="skill-groups">
 
@@ -315,9 +318,12 @@ description: "Senior Backend Developer & Full Stack Engineer with 5+ years exper
 <!-- ===== FEATURED WORK ===== -->
     <section id="works" class="section-alt">
         <div class="container">
-            <div class="section-header fade-in-up">
-                <span class="section-eyebrow">Featured Work</span>
-                <h2 class="section-title">Scalable systems impacting <span class="text-accent">real businesses</span>.</h2>
+            <div class="section-header fade-in-up" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 12px; margin-bottom: 24px;">
+                <div>
+                    <span class="section-eyebrow">Featured Work</span>
+                    <h2 class="section-title">Scalable systems impacting <span class="text-accent">real businesses</span>.</h2>
+                </div>
+                <a href="/projects" style="color: var(--accent); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9rem; font-weight: 600; text-decoration: none; margin-bottom: 8px;">Explore All 10+ Enterprise Case Studies →</a>
             </div>
 
             <div class="works-featured" style="margin-bottom: 2rem;">
@@ -1109,9 +1115,12 @@ description: "Senior Backend Developer & Full Stack Engineer with 5+ years exper
     <!-- ===== LATEST WRITING ===== -->
     <section id="blog-preview" class="section-alt">
         <div class="container">
-            <div class="section-header fade-in-up">
-                <span class="section-eyebrow">Articles & Insights</span>
-                <h2 class="section-title">Latest <span class="text-accent">Writing</span>.</h2>
+            <div class="section-header fade-in-up" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 12px; margin-bottom: 24px;">
+                <div>
+                    <span class="section-eyebrow">Articles & Insights</span>
+                    <h2 class="section-title">Latest <span class="text-accent">Writing</span>.</h2>
+                </div>
+                <a href="/blog" style="color: var(--accent); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9rem; font-weight: 600; text-decoration: none; margin-bottom: 8px;">View All 10 Publications &amp; Case Studies →</a>
             </div>
 
             <div class="slider-wrapper" style="position: relative;">
@@ -1124,6 +1133,7 @@ description: "Senior Backend Developer & Full Stack Engineer with 5+ years exper
                 </button>
 
                 <div id="blog-slider-track" class="works-grid" style="overflow-x: auto; scroll-behavior: smooth; padding-bottom: 20px; scrollbar-width: none; -webkit-overflow-scrolling: touch; display: flex; gap: 1.5rem; scroll-snap-type: x mandatory;">
+                    <!-- BLOG_SLIDER_LIST -->
                     {% for post in site.posts %}
                     <div class="work-card fade-in-up" style="flex: 0 0 360px; scroll-snap-align: start;">
                         <div class="work-card-header">
@@ -1153,6 +1163,7 @@ description: "Senior Backend Developer & Full Stack Engineer with 5+ years exper
                         </div>
                     </div>
                     {% endfor %}
+                    <!-- /BLOG_SLIDER_LIST -->
                 </div>
             </div>
         </div>

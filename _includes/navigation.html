@@ -10,13 +10,19 @@
           <a href="/" class="nav-link {% if page.url == '/' %}active{% endif %}">Home</a>
         </li>
         <li class="nav-item">
+          <a href="/projects" class="nav-link {% if page.url contains '/projects' %}active{% endif %}">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a href="/skills" class="nav-link {% if page.url contains '/skills' %}active{% endif %}">Skills</a>
+        </li>
+        <li class="nav-item">
           <a href="/cv" class="nav-link {% if page.url contains '/cv' %}active{% endif %}">CV / Resume</a>
         </li>
         <li class="nav-item">
           <a href="/blog" class="nav-link {% if page.url contains '/blog' %}active{% endif %}">Blog</a>
         </li>
         <li class="nav-item">
-          <a href="/contact" class="nav-link {% if page.url == '/contact.html' %}active{% endif %}">Contact</a>
+          <a href="/contact" class="nav-link {% if page.url == '/contact.html' or page.url contains '/contact' %}active{% endif %}">Contact</a>
         </li>
       </ul>
     </div>

@@ -18,6 +18,16 @@
   status = 301
 
 [[redirects]]
+  from = "/projects"
+  to = "/projects.html"
+  status = 301
+
+[[redirects]]
+  from = "/skills"
+  to = "/skills.html"
+  status = 301
+
+[[redirects]]
   from = "/blog"
   to = "/blog/"
   status = 301

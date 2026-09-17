@@ -1,27 +1,59 @@
 ---
 layout: default
-title: "Blog - Eslam Abdelbasset"
-description: "Insights on software engineering, entrepreneurship, and building scalable systems"
+title: "Technical Blog & Architecture Publications | Eslam Abdelbasset"
+description: "Insights on distributed systems, ZATCA e-invoicing, database query tuning, high-throughput Redis queues, and enterprise ERP scaling by Eslam Abdelbasset."
 ---
 
 <div class="blog-container">
+
+  <!-- BLOG HEADER -->
   <header class="blog-header">
-    <h1 class="blog-title">Blog</h1>
+    <div class="blog-badge-top">
+      <span class="blog-badge-dot"></span>
+      <span>Engineering Insights &bull; Production Case Studies</span>
+    </div>
+    <h1 class="blog-title">Engineering &amp; Architecture <span>Publications</span></h1>
     <p class="blog-description">
-      Insights on software engineering, system design, and building scalable systems that serve millions
+      Deep-dive architectural patterns, performance benchmarks, and real production engineering solutions from 5+ years building enterprise ERPs, high-throughput queues, and multi-tenant SaaS platforms.
     </p>
+
+    <!-- HR Callout Box -->
+    <div class="blog-hr-banner">
+      <div class="bhr-icon">
+        <i data-lucide="award" size="22" class="text-accent"></i>
+      </div>
+      <div class="bhr-content">
+        <strong>For Recruiters, Engineering Leads &amp; Clients:</strong>
+        <p>Every article published here details real-world challenges solved in production—from ZATCA Phase 2 cryptographic pipelines to database sharding and sub-100ms API architectures.</p>
+      </div>
+      <a href="/assets/Eslam_Abdelbasset_Resume.pdf" download="Eslam_Abdelbasset_Resume.pdf" class="bhr-btn">
+        <i data-lucide="download" size="14"></i>
+        <span>Download CV</span>
+      </a>
+    </div>
+
+    <!-- Category Filter Tabs -->
+    <div class="blog-category-filter">
+      <button type="button" class="bcat-btn active" data-bcat="all">All Articles (10)</button>
+      <button type="button" class="bcat-btn" data-bcat="FinTech">FinTech &amp; ZATCA</button>
+      <button type="button" class="bcat-btn" data-bcat="System Design">System Design &amp; Queues</button>
+      <button type="button" class="bcat-btn" data-bcat="Database">Database &amp; SQL Tuning</button>
+      <button type="button" class="bcat-btn" data-bcat="AI">AI &amp; Vector Search</button>
+      <button type="button" class="bcat-btn" data-bcat="Architecture">Architecture &amp; DDD</button>
+    </div>
   </header>
 
+  <!-- POSTS LIST -->
   <div class="blog-posts">
-    {% assign all_posts = site.posts %}
-    {% for post in all_posts limit: 20 %}
-    <article class="blog-post-preview">
+    <!-- BLOG_POSTS_LIST -->
+    {% for post in site.posts %}
+    <article class="blog-post-preview" data-categories="{{ post.categories | join: ',' }}">
       <header class="post-preview-header">
-        <h2 class="post-preview-title">
-          <a href="{{ post.url }}">{{ post.title }}</a>
-        </h2>
         <div class="post-preview-meta">
-          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+          <time datetime="{{ post.date | date_to_xmlschema }}">
+            <i data-lucide="calendar" size="13"></i>
+            {{ post.date | date: "%B %d, %Y" }}
+          </time>
           {% if post.categories %}
           <div class="post-preview-categories">
             {% for category in post.categories %}
@@ -30,21 +62,21 @@ description: "Insights on software engineering, entrepreneurship, and building s
           </div>
           {% endif %}
         </div>
+
+        <h2 class="post-preview-title">
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </h2>
       </header>
 
       <div class="post-preview-content">
-        {% if post.excerpt %}
-          {{ post.excerpt | strip_html | truncatewords: 50 }}
-        {% else %}
-          {{ post.content | strip_html | truncatewords: 50 }}
-        {% endif %}
+        {{ post.excerpt | strip_html | truncatewords: 45 }}
       </div>
 
       <footer class="post-preview-footer">
-        <a href="{{ post.url }}" class="read-more">Read More →</a>
+        <a href="{{ post.url }}" class="read-more">Read Full Article →</a>
         {% if post.tags %}
         <div class="post-preview-tags">
-          {% for tag in post.tags limit:3 %}
+          {% for tag in post.tags limit:4 %}
           <a href="/tags/{{ tag | slugify }}" class="post-preview-tag-link">#{{ tag }}</a>
           {% endfor %}
         </div>
@@ -52,12 +84,37 @@ description: "Insights on software engineering, entrepreneurship, and building s
       </footer>
     </article>
     {% endfor %}
-
-    {% if all_posts.size == 0 %}
-    <div class="no-posts">
-      <h3>Coming Soon!</h3>
-      <p>Blog posts will appear here. Stay tuned for insights on software engineering and entrepreneurship.</p>
-    </div>
-    {% endif %}
+    <!-- /BLOG_POSTS_LIST -->
   </div>
+
 </div>
+
+<script>
+// Interactive Blog Category Filtering
+document.addEventListener('DOMContentLoaded', () => {
+  const filterBtns = document.querySelectorAll('.bcat-btn');
+  const articles = document.querySelectorAll('.blog-post-preview');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filterCat = btn.getAttribute('data-bcat');
+
+      articles.forEach(article => {
+        if (filterCat === 'all') {
+          article.style.display = 'block';
+        } else {
+          const cats = article.getAttribute('data-categories') || '';
+          if (cats.toLowerCase().includes(filterCat.toLowerCase())) {
+            article.style.display = 'block';
+          } else {
+            article.style.display = 'none';
+          }
+        }
+      });
+    });
+  });
+});
+</script>

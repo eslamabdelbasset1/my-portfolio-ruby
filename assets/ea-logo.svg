@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" width="100%" height="100%">
+  <defs>
+    <!-- Sky Blue to Indigo Gradient matching Portfolio Palette -->
+    <linearGradient id="eaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="45%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#818CF8" />
+    </linearGradient>
+
+    <linearGradient id="eaGradLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#BAE6FD" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+
+    <!-- Dark High-Tech Hexagon Surface -->
+    <linearGradient id="eaHexBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141820" />
+      <stop offset="100%" stop-color="#07080A" />
+    </linearGradient>
+
+    <radialGradient id="eaCoreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.22" />
+      <stop offset="80%" stop-color="#818CF8" stop-opacity="0.04" />
+      <stop offset="100%" stop-color="#07080A" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Filter for Glow -->
+    <filter id="eaGlowFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Hexagonal Dark Badge -->
+  <polygon points="100,10 180,55 180,145 100,190 20,145 20,55"
+           fill="url(#eaHexBg)"
+           stroke="#1E293B"
+           stroke-width="2.5" />
+
+  <!-- Ambient Internal Glow -->
+  <polygon points="100,10 180,55 180,145 100,190 20,145 20,55"
+           fill="url(#eaCoreGlow)" />
+
+  <!-- Subtle Accent Hexagon Outline -->
+  <polygon points="100,18 172,59 172,141 100,182 28,141 28,59"
+           fill="none"
+           stroke="url(#eaGrad)"
+           stroke-width="1.2"
+           stroke-dasharray="4 3"
+           opacity="0.45" />
+
+  <!-- Backend Architecture Network Vertices -->
+  <circle cx="100" cy="18" r="3" fill="#38BDF8" />
+  <circle cx="172" cy="59" r="3" fill="#818CF8" />
+  <circle cx="172" cy="141" r="3" fill="#818CF8" />
+  <circle cx="100" cy="182" r="3" fill="#38BDF8" />
+  <circle cx="28" cy="141" r="3" fill="#38BDF8" />
+  <circle cx="28" cy="59" r="3" fill="#38BDF8" />
+
+  <!-- Monogram Group (Centered at X: 100, Y: 100) -->
+  <g filter="url(#eaGlowFilter)">
+    <!-- 'E' Letter Geometry: x=44 to 96, y=60 to 140 -->
+    <!-- Outer Stem & Bars -->
+    <path d="M 44,60 L 96,60 L 96,73 L 60,73 L 60,93 L 90,93 L 90,106 L 60,106 L 60,127 L 98,127 L 98,140 L 44,140 Z"
+          fill="url(#eaGrad)" />
+    <!-- Beveled Highlight on E spine -->
+    <path d="M 44,60 L 50,66 L 50,134 L 44,140 Z"
+          fill="url(#eaGradLight)"
+          opacity="0.8" />
+
+    <!-- 'A' Letter Geometry: x=98 to 156, y=60 to 140 -->
+    <path d="M 124,60 L 138,60 L 164,140 L 147,140 L 140,119 L 118,119 L 111,140 L 96,140 Z M 129,86 L 122,107 L 136,107 Z"
+          fill="#FFFFFF" />
+
+    <!-- Beveled Light Reflection on Right Leg of A -->
+    <path d="M 138,60 L 164,140 L 157,140 L 133,65 Z"
+          fill="#BAE6FD"
+          opacity="0.4" />
+
+    <!-- High-Performance Circuit Bridge: Connects E & A through data node -->
+    <path d="M 88,99.5 L 120,99.5"
+          stroke="#38BDF8"
+          stroke-width="4.5"
+          stroke-linecap="round" />
+    <circle cx="104" cy="99.5" r="3.5" fill="#38BDF8" />
+  </g>
+</svg>

@@ -1,24 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <!-- Modern Dark Background -->
-  <rect width="100" height="100" rx="16" fill="#080808"/>
-  
-  <!-- Code bracket opening < -->
-  <path d="M 22 35 L 12 50 L 22 65" stroke="url(#grad)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  
-  <!-- EA letters in a clean, modern geometric style -->
-  <text x="49" y="60" font-family="'Outfit', sans-serif" font-size="32" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="-1">EA</text>
-  
-  <!-- Code bracket closing /> -->
-  <path d="M 78 35 L 88 50 L 78 65" stroke="url(#grad)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  
-  <!-- Forward slash / -->
-  <path d="M 72 40 L 78 60" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
-  
-  <!-- Premium Blue Gradient -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
   <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#38BDF8;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#2563EB;stop-opacity:1" />
+    <linearGradient id="favEaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="60%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#818CF8" />
     </linearGradient>
+    <radialGradient id="favGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#080808" stop-opacity="0" />
+    </radialGradient>
   </defs>
+
+  <!-- Modern Dark Rounded Squircle Base -->
+  <rect width="100" height="100" rx="22" fill="#080808" />
+  <rect width="100" height="100" rx="22" fill="url(#favGlow)" />
+  <rect x="2" y="2" width="96" height="96" rx="20" fill="none" stroke="url(#favEaGrad)" stroke-width="1.8" opacity="0.4" />
+
+  <!-- EA Monogram for Favicon Scale -->
+  <!-- 'E' Letter -->
+  <path d="M 20,28 L 48,28 L 48,36 L 29,36 L 29,46 L 44,46 L 44,54 L 29,54 L 29,64 L 49,64 L 49,72 L 20,72 Z"
+        fill="url(#favEaGrad)" />
+
+  <!-- 'A' Letter -->
+  <path d="M 64,28 L 73,28 L 88,72 L 78,72 L 74,60 L 61,60 L 57,72 L 48,72 Z M 68,43 L 63,53 L 72,53 Z"
+        fill="#FFFFFF" />
+
+  <!-- Integrated Tech Data Node Bridge -->
+  <line x1="43" y1="50" x2="63" y2="50" stroke="#38BDF8" stroke-width="3" stroke-linecap="round" />
+  <circle cx="53" cy="50" r="2.2" fill="#38BDF8" />
 </svg>

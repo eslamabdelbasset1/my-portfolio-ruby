@@ -192,10 +192,12 @@ function renderJekyllPage(filePath, reqUrl) {
   const layoutPath = path.join(ROOT, '_layouts', 'default.html');
   const navPath = path.join(ROOT, '_includes', 'navigation.html');
   const structuredDataPath = path.join(ROOT, '_includes', 'structured-data.html');
+  const footerPath = path.join(ROOT, '_includes', 'footer.html');
 
   let layout = fs.existsSync(layoutPath) ? fs.readFileSync(layoutPath, 'utf8') : '{{ content }}';
   let nav = fs.existsSync(navPath) ? fs.readFileSync(navPath, 'utf8') : '';
   let structuredData = fs.existsSync(structuredDataPath) ? fs.readFileSync(structuredDataPath, 'utf8') : '';
+  let footer = fs.existsSync(footerPath) ? fs.readFileSync(footerPath, 'utf8') : '';
 
   // Active navigation highlighting
   nav = nav.replace(/\{%\s*if page\.url == '\/'\s*%\}active\{%\s*endif\s*%\}/g, reqUrl === '/' ? 'active' : '');
@@ -208,6 +210,7 @@ function renderJekyllPage(filePath, reqUrl) {
   // Inject includes
   layout = layout.replace('{% include navigation.html %}', nav);
   layout = layout.replace('{% include structured-data.html %}', structuredData);
+  layout = layout.replace('{% include footer.html %}', footer);
 
   let processedBody = body;
   const posts = getPosts();
@@ -335,11 +338,13 @@ function renderSingleBlogPost(post, reqUrl) {
   const postLayoutPath = path.join(ROOT, '_layouts', 'post.html');
   const navPath = path.join(ROOT, '_includes', 'navigation.html');
   const structuredDataPath = path.join(ROOT, '_includes', 'structured-data.html');
+  const footerPath = path.join(ROOT, '_includes', 'footer.html');
 
   let defaultLayout = fs.readFileSync(layoutPath, 'utf8');
   let postLayout = fs.readFileSync(postLayoutPath, 'utf8');
   let nav = fs.existsSync(navPath) ? fs.readFileSync(navPath, 'utf8') : '';
   let structuredData = fs.existsSync(structuredDataPath) ? fs.readFileSync(structuredDataPath, 'utf8') : '';
+  let footer = fs.existsSync(footerPath) ? fs.readFileSync(footerPath, 'utf8') : '';
 
   // Active navigation highlighting
   nav = nav.replace(/\{%\s*if page\.url == '\/'\s*%\}active\{%\s*endif\s*%\}/g, '');
@@ -351,6 +356,7 @@ function renderSingleBlogPost(post, reqUrl) {
 
   defaultLayout = defaultLayout.replace('{% include navigation.html %}', nav);
   defaultLayout = defaultLayout.replace('{% include structured-data.html %}', structuredData);
+  defaultLayout = defaultLayout.replace('{% include footer.html %}', footer);
 
   // Parse frontmatter from post layout
   const { body: postLayoutBody } = parseFrontMatter(postLayout);

@@ -24,6 +24,9 @@ function getMimeType(filePath) {
     case '.ico': return 'image/x-icon';
     case '.xml': return 'application/xml';
     case '.txt': return 'text/plain; charset=utf-8';
+    case '.woff2': return 'font/woff2';
+    case '.woff': return 'font/woff';
+    case '.ttf': return 'font/ttf';
     default: return 'application/octet-stream';
   }
 }
@@ -290,13 +293,33 @@ function renderJekyllPage(filePath, reqUrl) {
   layout = layout.replace('{{ content }}', processedBody);
 
   // Replace remaining template variables
+  const keywords = frontmatter.keywords || 'software engineer for hire, senior backend developer, full stack engineer, enterprise software development, laravel, php, react';
+  const robots = frontmatter.robots || 'index, follow';
+  const ogTitle = frontmatter.og_title || title;
+  const ogDescription = frontmatter.og_description || description;
+
+  const canonicalUrl = 'https://eslamabdelbasset.vercel.app' + (reqUrl === '/' ? '/' : reqUrl.replace(/\/+$/, ''));
+  const ogType = frontmatter.og_type || 'website';
+
   layout = layout.replace(/\{%\s*if page\.title\s*%\}.*?\{%\s*endif\s*%\}/gs, title);
   layout = layout.replace(/\{\{\s*page\.title\s*\}\}/g, title);
   layout = layout.replace(/\{\{\s*site\.title\s*\}\}/g, 'Eslam Abdelbasset - Senior Backend Developer & Full Stack Engineer');
   layout = layout.replace(/\{\{\s*page\.description\s*\}\}/g, description);
   layout = layout.replace(/\{\{\s*site\.description\s*\}\}/g, description);
+  layout = layout.replace(/\{\{\s*page\.keywords\s*\}\}/g, keywords);
+  layout = layout.replace(/\{\{\s*page\.robots\s*\}\}/g, robots);
+  layout = layout.replace(/\{\{\s*page\.og_title\s*\}\}/g, ogTitle);
+  layout = layout.replace(/\{\{\s*site\.og_title\s*\}\}/g, ogTitle);
+  layout = layout.replace(/\{\{\s*page\.og_description\s*\}\}/g, ogDescription);
+  layout = layout.replace(/\{\{\s*site\.og_description\s*\}\}/g, ogDescription);
+  layout = layout.replace(/\{%\s*if page\.og_type\s*%\}.*?\{%\s*endif\s*%\}/gs, ogType);
+  layout = layout.replace(/\{\{\s*page\.og_type\s*\}\}/g, ogType);
+  layout = layout.replace(/\{%\s*if page\.canonical\s*%\}.*?\{%\s*endif\s*%\}/gs, canonicalUrl);
+  layout = layout.replace(/\{\{\s*page\.canonical\s*\}\}/g, canonicalUrl);
   layout = layout.replace(/\{\{\s*site\.author\s*\}\}/g, 'Eslam Abdelbasset');
-  layout = layout.replace(/\{\{\s*site\.url\s*\}\}/g, `http://localhost:${PORT}`);
+  layout = layout.replace(/\{\{\s*page\.url\s*\|\s*absolute_url\s*\}\}/g, canonicalUrl);
+  layout = layout.replace(/\{\{\s*page\.url\s*\}\}/g, reqUrl);
+  layout = layout.replace(/\{\{\s*site\.url\s*\}\}/g, `https://eslamabdelbasset.vercel.app`);
   layout = layout.replace(/\{\{.*?\|\s*absolute_url\s*\}\}/g, `/assets/me-image.png`);
   layout = layout.replace(/\{\{.*?\|\s*relative_url\s*\}\}/g, `/`);
 
@@ -359,8 +382,21 @@ function renderSingleBlogPost(post, reqUrl) {
   finalHtml = finalHtml.replace(/\{\{\s*site\.title\s*\}\}/g, 'Eslam Abdelbasset - Senior Backend Developer & Full Stack Engineer');
   finalHtml = finalHtml.replace(/\{\{\s*page\.description\s*\}\}/g, post.excerpt);
   finalHtml = finalHtml.replace(/\{\{\s*site\.description\s*\}\}/g, post.excerpt);
-  finalHtml = finalHtml.replace(/\{\{\s*site\.author\s*\}\}/g, 'Eslam Abdelbasset');
-  finalHtml = finalHtml.replace(/\{\{\s*site\.url\s*\}\}/g, `http://localhost:${PORT}`);
+  finalHtml = finalHtml.replace(/\{\{\s*page\.keywords\s*\}\}/g, post.tags.join(', ') + ', backend engineering, distributed systems, high throughput');
+  finalHtml = finalHtml.replace(/\{\{\s*page\.robots\s*\}\}/g, 'index, follow');
+  finalHtml = finalHtml.replace(/\{\{\s*page\.og_title\s*\}\}/g, post.title);
+  finalHtml = finalHtml.replace(/\{\{\s*site\.og_title\s*\}\}/g, post.title);
+  finalHtml = finalHtml.replace(/\{\{\s*page\.og_description\s*\}\}/g, post.excerpt);
+  finalHtml = finalHtml.replace(/\{\{\s*site\.og_description\s*\}\}/g, post.excerpt);
+  const postCanonical = `https://eslamabdelbasset.vercel.app${post.url}`;
+  finalHtml = finalHtml.replace(/\{%\s*if page\.og_type\s*%\}.*?\{%\s*endif\s*%\}/gs, 'article');
+  finalHtml = finalHtml.replace(/\{\{\s*page\.og_type\s*\}\}/g, 'article');
+  finalHtml = finalHtml.replace(/\{%\s*if page\.canonical\s*%\}.*?\{%\s*endif\s*%\}/gs, postCanonical);
+  finalHtml = finalHtml.replace(/\{\{\s*page\.canonical\s*\}\}/g, postCanonical);
+  finalHtml = finalHtml.replace(/\{\{\s*page\.author\s*\}\}/g, post.author || 'Eslam Abdelbasset');
+  finalHtml = finalHtml.replace(/\{\{\s*page\.url\s*\|\s*absolute_url\s*\}\}/g, postCanonical);
+  finalHtml = finalHtml.replace(/\{\{\s*page\.url\s*\}\}/g, reqUrl);
+  finalHtml = finalHtml.replace(/\{\{\s*site\.url\s*\}\}/g, `https://eslamabdelbasset.vercel.app`);
   finalHtml = finalHtml.replace(/\{\{.*?\|\s*absolute_url\s*\}\}/g, `/assets/me-image.png`);
   finalHtml = finalHtml.replace(/\{\{.*?\|\s*relative_url\s*\}\}/g, `/`);
 

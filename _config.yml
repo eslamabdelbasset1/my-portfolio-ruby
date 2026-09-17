@@ -27,9 +27,9 @@ twitter:
 social:
   name: Eslam Abdelbasset
   links:
-    - https://www.linkedin.com/in/eslamabdelbasset/
+    - https://www.linkedin.com/in/eslamabdelbasset
     - https://github.com/eslamabdelbasset1
-    - https://eslamabdelbasset.vercel.app/
+    - https://eslamabdelbasset.vercel.app
 
 # Jekyll settings
 permalink: /blog/:year/:month/:day/:slug/

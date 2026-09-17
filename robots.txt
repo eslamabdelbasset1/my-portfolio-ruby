@@ -1,26 +1,24 @@
----
----
 User-agent: *
 Allow: /
 
-# Important pages for indexing
+# Allow crawling of all pages and assets
 Allow: /blog/
+Allow: /projects
+Allow: /skills
+Allow: /cv
 Allow: /contact
-Allow: /_posts/
-
-# Sitemap location
-Sitemap: {{ '/sitemap.xml' | absolute_url }}
+Allow: /assets/
+Allow: /favicon.svg
 
 # Optimize crawl budget - block unnecessary files
-Disallow: /vendor/
-Disallow: /assets/projects-data.js
+Disallow: /.git/
+Disallow: /.github/
 Disallow: /_site/
 Disallow: /Gemfile*
-Disallow: /.git/
-Disallow: /.gitignore
 Disallow: /README.md
+Disallow: /netlify.toml
+Disallow: /package.json
+Disallow: /serve.mjs
 
-# Allow search engines to crawl important assets
-Allow: /assets/me-image.png
-Allow: /favicon.svg
-Allow: /assets/style.css
+# Sitemap location
+Sitemap: https://eslamabdelbasset.vercel.app/sitemap.xml

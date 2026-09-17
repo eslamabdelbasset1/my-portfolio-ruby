@@ -1,5 +1,6 @@
 ---
 layout: default
+og_type: article
 ---
 
 <article class="blog-post">
@@ -133,6 +134,28 @@ layout: default
     </div>
   </footer>
 </article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "{{ page.title }}",
+  "image": "{{ '/assets/me-image.png' | absolute_url }}",
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.date | date_to_xmlschema }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ page.author | default: 'Eslam Abdelbasset' }}",
+    "url": "{{ site.url }}"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Eslam Abdelbasset",
+    "url": "{{ site.url }}"
+  },
+  "description": "{{ page.excerpt | strip_html | strip_newlines | escape }}"
+}
+</script>
 
 <script>
 function copyPostUrl(btn) {

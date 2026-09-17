@@ -130,6 +130,14 @@ const projects = [
     bg: "",
   },
   {
+    name: "Bazmethod Dashboard",
+    url: "https://bazmethod-dashboard.com/",
+    domain: "bazmethod-dashboard.com",
+    displayUrl: "bazmethod-dashboard.com",
+    image: "assets/img/companies/Baz-Logo-02.png",
+    bg: "#ffffff",
+  },
+  {
     name: "Elbayan Law Firm",
     url: "http://elbayanlawfirm.info/",
     domain: "elbayanlawfirm.info",

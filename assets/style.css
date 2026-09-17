@@ -891,6 +891,8 @@ body::after {
   width: 46px;
   height: 46px;
   object-fit: contain;
+  border-radius: 6px;
+}
 .orbit-logo--fallback { background: #ffffff !important; }
 .orbit-logo--fallback img { opacity: 0.95; }
 .orbit-logo:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }

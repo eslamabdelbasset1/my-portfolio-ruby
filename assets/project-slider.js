@@ -6,15 +6,17 @@ class ProjectSlider {
 
   // Function to create a project card HTML
   createProjectCard(project) {
-    const bg = project.bg || '';
+    const bg = project.bg || '#ffffff';
+    const fallback = 'assets/fallback-logo.png';
+    const imageSrc = (project.image && project.image.trim()) ? project.image : fallback;
     return `
       <a href="${project.url}" target="_blank" class="project-card">
         <img
-          src="${project.image || '/assets/fallback-favicon.svg'}"
+          src="${imageSrc}"
           alt="${project.name}"
           class="project-favicon"
           style="${bg ? `background:${bg}` : ''}"
-          onerror="this.onerror=null;this.src='/assets/fallback-favicon.svg'"
+          onerror="this.onerror=null;this.src='${fallback}'"
         />
         <div class="project-info">
           <span class="project-name">${project.name}</span>
@@ -262,12 +264,16 @@ class ProjectSlider {
     const y   = Math.round(Math.sin(rad) * radius);
     const bg = project.bg || '#ffffff';
     const label = project.detail ? `${project.name} · ${project.detail}` : project.name;
+    const fallback = 'assets/fallback-logo.png';
+    const hasImage = Boolean(project.image && project.image.trim());
+    const imageSrc = hasImage ? project.image : fallback;
+
     return `
       <div class="orbit-item-wrap" style="--ox:${x}px;--oy:${y}px">
         <div class="orbit-upright">
-          <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="orbit-logo${project.image ? '' : ' orbit-logo--fallback'}" aria-label="${label}" title="${label}"${bg ? ` style="background:${bg}"` : ''}>
-            <img src="${project.image || '/assets/fallback-favicon.svg'}" alt="" decoding="async"
-                 onerror="this.onerror=null;this.src='/assets/fallback-favicon.svg';this.parentElement.classList.add('orbit-logo--fallback')" />
+          <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="orbit-logo${hasImage ? '' : ' orbit-logo--fallback'}" aria-label="${label}" title="${label}"${bg ? ` style="background:${bg}"` : ''}>
+            <img src="${imageSrc}" alt="${label}" decoding="async"
+                 onerror="this.onerror=null;this.src='${fallback}';this.parentElement.classList.add('orbit-logo--fallback')" />
             <span class="orbit-tooltip">${label}</span>
           </a>
         </div>

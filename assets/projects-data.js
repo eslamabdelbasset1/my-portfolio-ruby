@@ -118,8 +118,8 @@ const projects = [
     url: "https://hyper-eg.com/",
     domain: "hyper-eg.com",
     displayUrl: "hyper-eg.com",
-    image: "",
-    bg: "",
+    image: "assets/img/companies/hyper-eg.png",
+    bg: "#ffffff",
   },
   {
     name: "Bazmethod",
@@ -134,8 +134,8 @@ const projects = [
     url: "http://elbayanlawfirm.info/",
     domain: "elbayanlawfirm.info",
     displayUrl: "elbayanlawfirm.info",
-    image: "",
-    bg: "",
+    image: "assets/img/companies/elbayan-law-firm.png",
+    bg: "#ffffff",
   },
   {
     name: "IA Pallet",

@@ -12,8 +12,8 @@ function handleImageError(img) {
     // Use the fallback profile SVG file
     img.src = "assets/fallback-profile.svg";
   } else {
-    // Use the fallback favicon SVG file
-    img.src = "assets/fallback-favicon.svg";
+    // Use the fallback logo
+    img.src = "assets/fallback-logo.png";
   }
 
   // Remove the onerror handler to prevent infinite loops

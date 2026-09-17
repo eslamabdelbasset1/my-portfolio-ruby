@@ -1,22 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
   <defs>
-    <linearGradient id="favGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="fallbackGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#00d2ff" />
       <stop offset="50%" stop-color="#0070f3" />
       <stop offset="100%" stop-color="#7928ca" />
     </linearGradient>
-    <linearGradient id="favGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="fallbackGlow" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.15" />
       <stop offset="100%" stop-color="#0070f3" stop-opacity="0.05" />
     </linearGradient>
   </defs>
   <rect x="6" y="6" width="88" height="88" rx="22" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
-  <rect x="12" y="12" width="76" height="76" rx="18" fill="url(#favGlow)" stroke="url(#favGrad)" stroke-width="1.5" stroke-dasharray="2 3" opacity="0.6"/>
+  <rect x="12" y="12" width="76" height="76" rx="18" fill="url(#fallbackGlow)" stroke="url(#fallbackGrad)" stroke-width="1.5" stroke-dasharray="2 3" opacity="0.6"/>
   <!-- Isometric Tech / Enterprise Cube -->
-  <path d="M50 24 L76 38 V62 L50 76 L24 62 V38 Z" fill="none" stroke="url(#favGrad)" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
-  <path d="M50 24 V76" stroke="url(#favGrad)" stroke-width="3" stroke-linecap="round"/>
-  <path d="M50 50 L76 38" stroke="url(#favGrad)" stroke-width="3" stroke-linecap="round"/>
-  <path d="M50 50 L24 38" stroke="url(#favGrad)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M50 24 L76 38 V62 L50 76 L24 62 V38 Z" fill="none" stroke="url(#fallbackGrad)" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M50 24 V76" stroke="url(#fallbackGrad)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M50 50 L76 38" stroke="url(#fallbackGrad)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M50 50 L24 38" stroke="url(#fallbackGrad)" stroke-width="3" stroke-linecap="round"/>
   <!-- Center tech core node -->
   <circle cx="50" cy="50" r="5.5" fill="#00d2ff"/>
   <circle cx="50" cy="24" r="3" fill="#0070f3"/>

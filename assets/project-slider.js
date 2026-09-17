@@ -267,14 +267,18 @@ class ProjectSlider {
     const fallback = 'assets/fallback-logo.png';
     const hasImage = Boolean(project.image && project.image.trim());
     const imageSrc = hasImage ? project.image : fallback;
+    const sub = project.detail || project.displayUrl || '';
 
     return `
       <div class="orbit-item-wrap" style="--ox:${x}px;--oy:${y}px">
         <div class="orbit-upright">
-          <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="orbit-logo${hasImage ? '' : ' orbit-logo--fallback'}" aria-label="${label}" title="${label}"${bg ? ` style="background:${bg}"` : ''}>
+          <a href="${project.url}" target="_blank" rel="noopener noreferrer"
+             class="orbit-logo${hasImage ? '' : ' orbit-logo--fallback'}"
+             data-name="${project.name}"
+             data-sub="${sub}"
+             aria-label="${label}" title="${label}"${bg ? ` style="background:${bg}"` : ''}>
             <img src="${imageSrc}" alt="${label}" decoding="async"
                  onerror="this.onerror=null;this.src='${fallback}';this.parentElement.classList.add('orbit-logo--fallback')" />
-            <span class="orbit-tooltip">${label}</span>
           </a>
         </div>
       </div>`;
@@ -299,6 +303,66 @@ class ProjectSlider {
     outer.forEach((p, i) => {
       const angle = (i / outer.length) * 360 - 90;
       outerRing.innerHTML += this.createOrbitItem(p, angle, 235);
+    });
+
+    // Reset ring animation so inner and outer ring rotations run in exact lockstep
+    innerRing.style.animation = 'none';
+    outerRing.style.animation = 'none';
+    void innerRing.offsetWidth;
+    innerRing.style.animation = '';
+    outerRing.style.animation = '';
+
+    // Attach interactive hover on Center Orb
+    this.setupOrbitCenterHover();
+  }
+
+  setupOrbitCenterHover() {
+    const centerOrb = document.getElementById('orbit-center');
+    const defaultView = document.getElementById('orbit-center-default');
+    const hoverView = document.getElementById('orbit-center-hover');
+    const nameEl = document.getElementById('orbit-center-name');
+    const subEl = document.getElementById('orbit-center-sub');
+    if (!centerOrb || !defaultView || !hoverView || !nameEl) return;
+
+    const logos = document.querySelectorAll('.orbit-logo');
+    logos.forEach(logo => {
+      logo.addEventListener('mouseenter', () => {
+        const name = logo.getAttribute('data-name');
+        const sub = logo.getAttribute('data-sub');
+        if (!name) return;
+
+        nameEl.textContent = name;
+        if (subEl) {
+          subEl.textContent = sub;
+          subEl.style.display = sub ? 'block' : 'none';
+        }
+
+        defaultView.style.opacity = '0';
+        defaultView.style.transform = 'scale(0.85)';
+        setTimeout(() => {
+          defaultView.style.display = 'none';
+          hoverView.style.display = 'flex';
+          void hoverView.offsetWidth;
+          hoverView.style.opacity = '1';
+          hoverView.style.transform = 'scale(1)';
+        }, 100);
+
+        centerOrb.classList.add('orbit-center--active');
+      });
+
+      logo.addEventListener('mouseleave', () => {
+        hoverView.style.opacity = '0';
+        hoverView.style.transform = 'scale(0.85)';
+        setTimeout(() => {
+          hoverView.style.display = 'none';
+          defaultView.style.display = 'flex';
+          void defaultView.offsetWidth;
+          defaultView.style.opacity = '1';
+          defaultView.style.transform = 'scale(1)';
+        }, 100);
+
+        centerOrb.classList.remove('orbit-center--active');
+      });
     });
   }
 

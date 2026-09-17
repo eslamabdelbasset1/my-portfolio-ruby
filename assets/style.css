@@ -802,29 +802,6 @@ body::after {
   display: block;
 }
 
-/* Tooltip */
-.orbit-tooltip {
-  position: absolute;
-  bottom: calc(100% + 8px);
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--bg-elevated);
-  color: var(--text-primary);
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 0.62rem;
-  font-weight: 600;
-  white-space: nowrap;
-  padding: 4px 9px;
-  border-radius: 6px;
-  border: 1px solid var(--border-subtle);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.15s ease;
-  z-index: 30;
-}
-
-.orbit-logo:hover .orbit-tooltip { opacity: 1; }
-
 /* Center orb */
 .orbit-center {
   position: absolute;
@@ -834,7 +811,7 @@ body::after {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 96px; height: 96px;
+  width: 104px; height: 104px;
   border-radius: 50%;
   background: radial-gradient(circle at 40% 35%, var(--bg-elevated), var(--bg-surface));
   border: 1px solid var(--border-active);
@@ -843,6 +820,36 @@ body::after {
     0 0 32px rgba(56, 189, 248, 0.14),
     inset 0 0 16px rgba(56, 189, 248, 0.06);
   z-index: 10;
+  overflow: hidden;
+  padding: 8px;
+  text-align: center;
+  box-sizing: border-box;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.orbit-center.orbit-center--active {
+  border-color: var(--accent);
+  box-shadow:
+    0 0 0 8px rgba(56, 189, 248, 0.08),
+    0 0 36px rgba(56, 189, 248, 0.3),
+    inset 0 0 20px rgba(56, 189, 248, 0.12);
+}
+
+.orbit-center-default,
+.orbit-center-hover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.18s cubic-bezier(0.16, 1, 0.3, 1), transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.orbit-center-hover {
+  display: none;
+  opacity: 0;
+  transform: scale(0.85);
 }
 
 .orbit-center-num {
@@ -860,6 +867,31 @@ body::after {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-top: 3px;
+}
+
+.orbit-center-name {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.15;
+  text-align: center;
+  word-break: break-word;
+  max-width: 88px;
+}
+
+.orbit-center-sub {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.55rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: 3px;
+  line-height: 1.1;
+  text-align: center;
+  max-width: 88px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Mobile: center + scale the orbit scene */
@@ -897,7 +929,6 @@ body::after {
 .orbit-logo--fallback { background: #ffffff !important; }
 .orbit-logo--fallback img { opacity: 0.95; }
 .orbit-logo:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
-.orbit-logo:focus-visible .orbit-tooltip { opacity: 1; }
 .orbit-scene:hover .orbit-ring, .orbit-scene:hover .orbit-upright,
 .orbit-scene:focus-within .orbit-ring, .orbit-scene:focus-within .orbit-upright { animation-play-state: paused; }
 @media (prefers-reduced-motion: reduce) {

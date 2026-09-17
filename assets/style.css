@@ -5521,15 +5521,23 @@ section#education {
 
 .hr-avatar-wrap {
   position: relative;
-  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 68px;
+  flex: 0 0 68px;
+  align-self: center;
+  line-height: 0;
 }
 
 .hr-avatar {
-  width: clamp(56px, 8vw, 70px);
-  height: clamp(56px, 8vw, 70px);
+  width: 68px;
+  height: 68px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--accent);
+  display: block;
+  border: 2.5px solid var(--accent);
   box-shadow: 0 0 16px var(--accent-dim);
 }
 
@@ -5541,8 +5549,10 @@ section#education {
   height: 14px;
   border-radius: 50%;
   background: #10B981;
-  border: 2px solid var(--bg-deep);
-  box-shadow: 0 0 8px #10b981;
+  border: 2.5px solid #141414;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.85);
+  z-index: 5;
+  pointer-events: none;
 }
 
 .hr-name {
@@ -6717,7 +6727,13 @@ section#education {
 
 .prb-avatar-wrap {
   position: relative;
-  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+  line-height: 0;
 }
 
 .prb-avatar {
@@ -6725,18 +6741,21 @@ section#education {
   height: 58px;
   border-radius: 50%;
   object-fit: cover;
+  display: block;
   border: 2px solid var(--accent);
 }
 
 .prb-status-dot {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 2px;
+  right: 2px;
   width: 12px;
   height: 12px;
   border-radius: 50%;
   background: #10B981;
-  border: 2px solid var(--bg-deep);
+  border: 2px solid #141414;
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.8);
+  z-index: 3;
 }
 
 .prb-content {
@@ -6893,10 +6912,29 @@ section#education {
   }
 
   .hr-card-left {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     gap: 14px;
     width: 100%;
+  }
+
+  .hr-avatar-wrap {
+    width: 56px;
+    height: 56px;
+    flex: 0 0 56px;
+  }
+
+  .hr-avatar {
+    width: 56px;
+    height: 56px;
+  }
+
+  .hr-online-indicator {
+    bottom: 2px;
+    right: 2px;
+    width: 12px;
+    height: 12px;
+    border-width: 2px;
   }
 
   .hr-card-actions {

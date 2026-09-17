@@ -893,17 +893,7 @@ body::after {
   object-fit: contain;
   border-radius: 6px;
 }
-.orbit-initials {
-  display: none;
-  color: var(--accent);
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  letter-spacing: .04em;
-}
 .orbit-logo--fallback { background: var(--bg-elevated) !important; }
-.orbit-logo--fallback img { display: none; }
-.orbit-logo--fallback .orbit-initials { display: block; }
 .orbit-logo:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .orbit-logo:focus-visible .orbit-tooltip { opacity: 1; }
 .orbit-scene:hover .orbit-ring, .orbit-scene:hover .orbit-upright,

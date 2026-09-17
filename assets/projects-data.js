@@ -110,7 +110,7 @@ const projects = [
     url: "https://panooramaeg.com",
     domain: "panooramaeg.com",
     displayUrl: "panooramaeg.com",
-    image: "",
+    image: "assets/img/companies/panoorama.webp",
     bg: "",
   },
   {
@@ -126,7 +126,7 @@ const projects = [
     url: "https://bazmethod.com/",
     domain: "bazmethod.com",
     displayUrl: "bazmethod.com",
-    image: "",
+    image: "assets/img/companies/bazmethod.png",
     bg: "",
   },
   {
@@ -142,7 +142,7 @@ const projects = [
     url: "https://iapallet.com/",
     domain: "iapallet.com",
     displayUrl: "iapallet.com",
-    image: "",
+    image: "assets/img/companies/ia-pallet.png",
     bg: "",
   }
 ];

@@ -10,11 +10,11 @@ class ProjectSlider {
     return `
       <a href="${project.url}" target="_blank" class="project-card">
         <img
-          src="${project.image}"
+          src="${project.image || '/assets/fallback-favicon.svg'}"
           alt="${project.name}"
           class="project-favicon"
           style="${bg ? `background:${bg}` : ''}"
-          onerror="this.onerror=null;this.src='https://icons.duckduckgo.com/ip3/${project.domain}.ico'"
+          onerror="this.onerror=null;this.src='/assets/fallback-favicon.svg'"
         />
         <div class="project-info">
           <span class="project-name">${project.name}</span>
@@ -261,15 +261,13 @@ class ProjectSlider {
     const x   = Math.round(Math.cos(rad) * radius);
     const y   = Math.round(Math.sin(rad) * radius);
     const bg = project.bg || '#ffffff';
-    const initials = project.name.split(/[^a-z0-9]+/i).filter(Boolean).slice(0, 2).map(word => word[0]).join('').toUpperCase();
     const label = project.detail ? `${project.name} · ${project.detail}` : project.name;
     return `
       <div class="orbit-item-wrap" style="--ox:${x}px;--oy:${y}px">
         <div class="orbit-upright">
           <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="orbit-logo${project.image ? '' : ' orbit-logo--fallback'}" aria-label="${label}" title="${label}"${bg ? ` style="background:${bg}"` : ''}>
-            ${project.image ? `<img src="${project.image}" alt="" decoding="async"
-                 onerror="this.onerror=null;this.parentElement.classList.add('orbit-logo--fallback')" />` : ''}
-            <span class="orbit-initials" aria-hidden="true">${initials}</span>
+            <img src="${project.image || '/assets/fallback-favicon.svg'}" alt="" decoding="async"
+                 onerror="this.onerror=null;this.src='/assets/fallback-favicon.svg';this.parentElement.classList.add('orbit-logo--fallback')" />
             <span class="orbit-tooltip">${label}</span>
           </a>
         </div>

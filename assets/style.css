@@ -5515,7 +5515,8 @@ section#education {
   display: flex;
   align-items: center;
   gap: 18px;
-  flex: 1 1 450px;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .hr-avatar-wrap {
@@ -6313,7 +6314,8 @@ section#education {
 }
 
 .bhr-content {
-  flex: 1 1 350px;
+  flex: 1 1 auto;
+  min-width: 0;
   font-size: 0.86rem;
   color: var(--text-secondary);
   line-height: 1.5;
@@ -6858,6 +6860,27 @@ section#education {
   .metrics-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .blog-title {
+    font-size: 2.2rem;
+  }
+
+  .blog-hr-banner {
+    padding: 14px 18px;
+    gap: 14px;
+    margin: 20px 0 18px;
+  }
+
+  .bhr-content {
+    font-size: 0.84rem;
+  }
+
+  .bhr-btn {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
 }
 
 /* Tablets Portrait & Mobile (< 768px) */
@@ -6873,6 +6896,7 @@ section#education {
     flex-direction: column;
     align-items: flex-start;
     gap: 14px;
+    width: 100%;
   }
 
   .hr-card-actions {
@@ -6931,15 +6955,126 @@ section#education {
     gap: 14px;
   }
 
+  /* Blog HR Banner Mobile Grid: tight, proportional, zero empty space */
   .blog-hr-banner {
-    flex-direction: column;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 12px;
+    row-gap: 12px;
+    align-items: start;
     padding: 16px;
+    margin: 18px 0 16px;
+    box-sizing: border-box;
+  }
+
+  .bhr-icon {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 2px;
+  }
+
+  .bhr-content {
+    grid-column: 2;
+    grid-row: 1;
+    flex: 0 1 auto;
+    width: 100%;
+    font-size: 0.84rem;
+    line-height: 1.5;
+  }
+
+  .bhr-content strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+  }
+
+  .bhr-content p {
+    margin: 0;
+    color: var(--text-secondary);
   }
 
   .bhr-btn {
+    grid-column: 1 / -1;
+    grid-row: 2;
     width: 100%;
     justify-content: center;
+    box-sizing: border-box;
+    padding: 10px 16px;
+  }
+
+  .blog-container {
+    padding: 24px 16px 60px;
+  }
+
+  .blog-header {
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+  }
+
+  .blog-title {
+    font-size: clamp(1.75rem, 5.5vw, 2.2rem);
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+
+  .blog-badge-top {
+    font-size: 0.76rem;
+    padding: 4px 10px;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .blog-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .blog-category-filter {
+    gap: 6px;
+    padding: 4px 0 8px;
+    margin-top: 14px;
+  }
+
+  .bcat-btn {
+    font-size: 0.78rem;
+    padding: 6px 12px;
+    min-height: 34px;
+  }
+
+  .blog-post-preview {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+
+  .post-preview-title a {
+    font-size: 1.18rem;
+    line-height: 1.35;
+  }
+
+  .post-preview-content {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  .post-preview-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .read-more {
+    font-size: 0.88rem;
+  }
+
+  .post-preview-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
   }
 
   .post-top-bar {
@@ -7022,10 +7157,43 @@ section#education {
     padding: 16px;
   }
 
-  .post-preview-footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+  .blog-container {
+    padding: 20px 12px 50px;
+  }
+
+  .blog-title {
+    font-size: 1.75rem;
+    line-height: 1.18;
+  }
+
+  .blog-badge-top {
+    font-size: 0.72rem;
+    padding: 3px 8px;
+  }
+
+  .blog-hr-banner {
+    padding: 12px;
+    column-gap: 10px;
+    row-gap: 10px;
+  }
+
+  .bhr-content {
+    font-size: 0.8rem;
+    line-height: 1.45;
+  }
+
+  .bhr-btn {
+    font-size: 0.78rem;
+    padding: 8px 12px;
+    min-height: 34px;
+  }
+
+  .blog-post-preview {
+    padding: 16px 12px;
+  }
+
+  .post-preview-title a {
+    font-size: 1.08rem;
   }
 
   .read-more {

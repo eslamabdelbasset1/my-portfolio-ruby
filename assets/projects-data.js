@@ -78,8 +78,8 @@ const projects = [
     url: "https://s.tog.sa/",
     domain: "tog.sa",
     displayUrl: "s.tog.sa",
-    image: "assets/img/works/tog.png",
-    bg: "",
+    image: "assets/img/works/tog-stores.png",
+    bg: "#ffffff",
   },
   {
     name: "Loc Camp",
